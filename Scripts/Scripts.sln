@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blasa-access-management", "blasa-access-management", "{36C43B76-E6DC-4C96-A36A-171442BC7233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.access.management.web", "blasa.access.management.web\blasa.access.management.web.csproj", "{700AE6CD-0551-43CD-84BC-57AC11147C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.access.management.Core", "blasa.access.management.Core\blasa.access.management.Core.csproj", "{9548D4C7-F0A3-43A6-B73B-29C4A983289A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.access.management.infrastructure", "blasa.access.management.infrastructure\blasa.access.management.infrastructure.csproj", "{970F5E8B-E701-42D8-AE5C-7271DA5B20BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{700AE6CD-0551-43CD-84BC-57AC11147C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{700AE6CD-0551-43CD-84BC-57AC11147C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{700AE6CD-0551-43CD-84BC-57AC11147C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{700AE6CD-0551-43CD-84BC-57AC11147C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9548D4C7-F0A3-43A6-B73B-29C4A983289A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9548D4C7-F0A3-43A6-B73B-29C4A983289A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9548D4C7-F0A3-43A6-B73B-29C4A983289A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9548D4C7-F0A3-43A6-B73B-29C4A983289A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970F5E8B-E701-42D8-AE5C-7271DA5B20BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970F5E8B-E701-42D8-AE5C-7271DA5B20BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970F5E8B-E701-42D8-AE5C-7271DA5B20BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970F5E8B-E701-42D8-AE5C-7271DA5B20BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{700AE6CD-0551-43CD-84BC-57AC11147C6C} = {36C43B76-E6DC-4C96-A36A-171442BC7233}
+		{9548D4C7-F0A3-43A6-B73B-29C4A983289A} = {36C43B76-E6DC-4C96-A36A-171442BC7233}
+		{970F5E8B-E701-42D8-AE5C-7271DA5B20BB} = {36C43B76-E6DC-4C96-A36A-171442BC7233}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6D67E21-45A6-4FDF-915F-8BC258DD74C0}
+	EndGlobalSection
+EndGlobal

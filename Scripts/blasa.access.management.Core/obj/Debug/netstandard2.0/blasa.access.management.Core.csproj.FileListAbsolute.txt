@@ -1,0 +1,9 @@
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\bin\Debug\netstandard2.0\blasa.access.management.Core.deps.json
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\bin\Debug\netstandard2.0\blasa.access.management.Core.dll
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\bin\Debug\netstandard2.0\blasa.access.management.Core.pdb
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\obj\Debug\netstandard2.0\blasa.access.management.Core.AssemblyInfoInputs.cache
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\obj\Debug\netstandard2.0\blasa.access.management.Core.AssemblyInfo.cs
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\obj\Debug\netstandard2.0\blasa.access.management.Core.csproj.CoreCompileInputs.cache
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\obj\Debug\netstandard2.0\blasa.access.management.Core.dll
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\obj\Debug\netstandard2.0\blasa.access.management.Core.pdb
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.Core\obj\Debug\netstandard2.0\blasa.access.management.Core.csprojAssemblyReference.cache

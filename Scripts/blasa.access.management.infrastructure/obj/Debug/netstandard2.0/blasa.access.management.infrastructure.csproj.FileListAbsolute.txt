@@ -1,0 +1,12 @@
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\bin\Debug\netstandard2.0\blasa.access.management.infrastructure.deps.json
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\bin\Debug\netstandard2.0\blasa.access.management.infrastructure.dll
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\bin\Debug\netstandard2.0\blasa.access.management.infrastructure.pdb
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\bin\Debug\netstandard2.0\blasa.access.management.Core.dll
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\bin\Debug\netstandard2.0\blasa.access.management.Core.pdb
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.csprojAssemblyReference.cache
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.AssemblyInfoInputs.cache
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.AssemblyInfo.cs
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.csproj.CopyComplete
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.dll
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.pdb
+C:\Users\abarrima\source\repos\Scripts\blasa.access.management.infrastructure\obj\Debug\netstandard2.0\blasa.access.management.infrastructure.csproj.CoreCompileInputs.cache
