@@ -1,0 +1,9 @@
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasaCar.access.management.Core.AssemblyInfoInputs.cache
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasaCar.access.management.Core.AssemblyInfo.cs
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasaCar.access.management.Core.csproj.CoreCompileInputs.cache
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\bin\Debug\netcoreapp3.1\blasaCar.access.management.Core.deps.json
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\bin\Debug\netcoreapp3.1\blasaCar.access.management.Core.dll
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\bin\Debug\netcoreapp3.1\blasaCar.access.management.Core.pdb
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasaCar.access.management.Core.dll
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasaCar.access.management.Core.pdb
+D:\Bureau\Blasacar-back\blasacar-back\Scripts\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasaCar.access.management.Core.csprojAssemblyReference.cache
