@@ -6,4 +6,3 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasaCar.access.management.C
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasa.access.management.Core.csproj.CoreCompileInputs.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasa.access.management.Core.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasa.access.management.Core.pdb
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasaCar.access.management.Core\obj\Debug\netcoreapp3.1\blasa.access.management.Core.csprojAssemblyReference.cache

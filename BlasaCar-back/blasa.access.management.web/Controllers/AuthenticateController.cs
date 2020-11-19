@@ -99,6 +99,8 @@ namespace blasa.access.management.web.Controllers
 
             };
             var result = await userManager.CreateAsync(user, model.Password);
+ 
+
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 

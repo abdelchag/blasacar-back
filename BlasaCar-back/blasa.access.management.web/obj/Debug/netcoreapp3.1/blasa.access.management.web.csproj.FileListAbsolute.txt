@@ -235,3 +235,5 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.csproj.CoreCompileInputs.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.MvcApplicationPartsAssemblyInfo.cs
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.MvcApplicationPartsAssemblyInfo.cache
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
