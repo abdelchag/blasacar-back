@@ -199,6 +199,10 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\SendGrid.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -223,6 +227,9 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.csprojAssemblyReference.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.AssemblyInfoInputs.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.AssemblyInfo.cs
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.csproj.CoreCompileInputs.cache
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.MvcApplicationPartsAssemblyInfo.cs
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.MvcApplicationPartsAssemblyInfo.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.RazorTargetAssemblyInfo.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.csproj.CopyComplete
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\staticwebassets\blasa.access.management.web.StaticWebAssets.Manifest.cache
@@ -230,10 +237,3 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.pdb
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.genruntimeconfig.cache
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\SendGrid.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.csproj.CoreCompileInputs.cache
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.MvcApplicationPartsAssemblyInfo.cs
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\obj\Debug\netcoreapp3.1\blasa.access.management.web.MvcApplicationPartsAssemblyInfo.cache
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Npgsql.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll

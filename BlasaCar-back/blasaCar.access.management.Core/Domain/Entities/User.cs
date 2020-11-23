@@ -17,5 +17,6 @@ namespace blasa.access.management.Core.Domain.Entities
         public string Name { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        
     }
 }

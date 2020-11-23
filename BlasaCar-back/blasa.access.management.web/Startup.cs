@@ -41,6 +41,7 @@ namespace blasa.access.management.web
             #region Services application
 
             services.Add(new ServiceDescriptor(typeof(IResponse), new Response()));
+            services.Add(new ServiceDescriptor(typeof(IToken), new Token()));
             services.AddTransient<IEmailSender, EmailSender>();
 
             #endregion
