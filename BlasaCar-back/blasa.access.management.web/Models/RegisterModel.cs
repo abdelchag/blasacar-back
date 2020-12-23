@@ -29,6 +29,6 @@ namespace blasa.access.management.web.Models
         //public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         [Required(ErrorMessage = "Sex is required")]
-        public string Sex { get; set; }
+        public string Gender { get; set; }
     }
 }

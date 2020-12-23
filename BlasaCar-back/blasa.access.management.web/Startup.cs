@@ -40,7 +40,7 @@ namespace blasa.access.management.web
 
             #region Services application
 
-            services.Add(new ServiceDescriptor(typeof(IResponse), new Response()));
+            services.Add(new ServiceDescriptor(typeof(IResponse<User>), new Response<User>()));
             services.Add(new ServiceDescriptor(typeof(IToken), new Token()));
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -95,8 +95,10 @@ namespace blasa.access.management.web
                 opt.Password.RequireDigit = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
-                opt.User.RequireUniqueEmail = true;
-                
+                //opt.User.RequireUniqueEmail = true;
+                opt.User.RequireUniqueEmail = false;
+               
+
 
                 //opt.SignIn.RequireConfirmedEmail = false;
             })

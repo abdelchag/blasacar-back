@@ -20,7 +20,10 @@ namespace blasa.access.management.web.Models
         public string Address { get; set; }
         //public string Email { get; set; }
         public DateTime BirthDate { get; set; }
-        //[Required(ErrorMessage = "Sex is required")]
-        public string Sex { get; set; }
+        //[Required(ErrorMessage = "Gender is required")]
+        public string Gender { get; set; }
+        [Required(ErrorMessage = "Provider Label is required")]
+       
+        public string ProviderLabel { get; set; }
     }
 }

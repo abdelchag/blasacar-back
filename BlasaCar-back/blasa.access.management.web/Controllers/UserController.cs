@@ -12,23 +12,24 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using blasa.access.management.Core.Domain.Entities;
 using Microsoft.AspNetCore.WebUtilities;
-
+using System.Linq;
 namespace blasa.access.management.web.Controllers
 {
     [Route("api/Access-Management/[controller]")]
     [ApiController]
-    public class UserEmailController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly UserManager<User> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
-        private readonly IResponse _response;
+        private readonly IResponse<User> _response;
         private readonly IEmailSender _EmailSender;
         private readonly IToken _Token;
+        
 
         
-        public UserEmailController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, 
-            IResponse response, IEmailSender EmailSender  , IToken Token )
+        public UserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, 
+            IResponse<User> response, IEmailSender EmailSender  , IToken Token )
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -38,20 +39,21 @@ namespace blasa.access.management.web.Controllers
             this._Token = Token;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var user = await userManager.FindByEmailAsync(model.Email);
+            var user = await userManager.FindByNameAsync(model.Email);
             if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
-               return Ok(new
-                {
-                    token = _Token.Token,
-                    expiration = _Token.Expiration,
-                    user=User,
-                });
+                return Ok(new Response<User> { Data = user, token = _Token.Token });
+                //return Ok(new
+                //{
+                //    token = _Token.Token,
+                //    expiration = _Token.Expiration,
+                //    user=User,
+                //});
             }
             return Unauthorized();
         }
@@ -93,29 +95,32 @@ namespace blasa.access.management.web.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-            var userExists = await userManager.FindByEmailAsync(model.Email);
-            if (userExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+            var userExists = await userManager.FindByNameAsync(model.Email);
+            if (userExists != null &&( userExists.Provider is null))
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> {   Message = "User already exists!" });
 
             User user = new User()
             {
                 Email = model.Email,
-                UserName = model.Email,
+                UserName = string.Concat("", model.Email),
                 SecurityStamp = Guid.NewGuid().ToString(),
                 FirstName =     model.firstName,
                 LastName  =     model.lastName,
                 Telephone =     model.Telephone,
                 Address   =     model.Address,
                 BirthDate =     model.BirthDate,
-                Sex       =     model.Sex,
+                Gender       =  model.Gender,
                 
 
             };
             var result = await userManager.CreateAsync(user, model.Password);
- 
+
 
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> { Message = "User creation failed! Please check user details and try again."});
+
+            //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
 
 
@@ -134,14 +139,16 @@ namespace blasa.access.management.web.Controllers
             //return RedirectToLocal(returnUrl);
 
             var _Token = await GetToken(user);
+            
+            
 
-
-            _response.Status = "Success";
-            _response.Message = "User created successfully!";
-            _response.ReturnObject = user;
-            _response.token = _Token.Token;
-            _response.expiration = _Token.Expiration;
-            return Ok(_response);
+            //_response.Status = "Success";
+            //_response.Message = "User created successfully!";
+            //_response.Data = user;
+            //_response.token = _Token.Token;
+            //_response.expiration = _Token.Expiration;
+            //return Ok(_response);
+            return Ok(new Response<User> { Data = user, token = _Token.Token });
         }
 
           }

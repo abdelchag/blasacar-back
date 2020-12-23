@@ -1,34 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using blasa.access.management.Core.Domain.Entities;
 using blasa.access.management.web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
-using blasa.access.management.Core.Domain.Entities;
-using Microsoft.AspNetCore.WebUtilities;
+using System.Threading.Tasks;
 
 namespace blasa.access.management.web.Controllers
 {
     [Route("api/access-management/[controller]")]
     [ApiController]
-    public class UserFaceBookController : ControllerBase
+    public class ExternalUserController : ControllerBase
     {
         private readonly UserManager<User> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
-        private readonly IResponse _response;
+        private readonly IResponse<User> _response;
         private readonly IEmailSender _EmailSender;
         private readonly IToken _Token;
 
 
-        public UserFaceBookController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,
-            IResponse response, IEmailSender EmailSender, IToken Token)
+        public ExternalUserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,
+            IResponse<User> response, IEmailSender EmailSender, IToken Token)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -38,23 +37,23 @@ namespace blasa.access.management.web.Controllers
             _Token = Token;
         }
 
-        [HttpGet]
-        [Route("login")]
-        public async Task<IActionResult> Login([FromBody] LoginModel model)
-        {
-            var user = await userManager.FindByEmailAsync(model.Email);
-            if (user != null  )
-            {
-                var _Token = await GetToken(user);
-                return Ok(new
-                {
-                    token = _Token.Token,
-                    expiration = _Token.Expiration,
-                    user = User,
-                });
-            }
-            return Unauthorized();
-        }
+        //[HttpPost]
+        //[Route("login")]
+        //public async Task<IActionResult> Login([FromBody] LoginModel model)
+        //{
+        //    var user = await userManager.FindByEmailAsync(model.Email);
+        //    if (user != null   )
+        //    {
+        //        var _Token = await GetToken(user);
+        //        return Ok(new
+        //        {
+        //            token = _Token.Token,
+        //            expiration = _Token.Expiration,
+        //            user = User,
+        //        });
+        //    }
+        //    return Unauthorized();
+        //}
 
         private async Task<IToken> GetToken(User user)
         {
@@ -93,31 +92,50 @@ namespace blasa.access.management.web.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModelExternal model)
         {
-            var userExists = await userManager.FindByEmailAsync(model.Email);
-            if (userExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
 
+            var _Provider = new Provider();
+            if (model.ProviderLabel.ToLower() == "facebook")
+            {
+                _Provider.Id = 1;
+                _Provider.Label = "Facebook";
+            }
+            else if (model.ProviderLabel.ToLower() == "gmail")
+            {
+                _Provider.Id = 2;
+                _Provider.Label = "Gmail";
+            }
+
+            var userExists = await userManager.FindByNameAsync(string.Concat(_Provider.Label, "", model.Email)) ;
+            string ProviderExist = userExists?.Provider?.Label;
+            if ((userExists != null && ProviderExist == model.ProviderLabel))
+            {
+                var _Token1 = await GetToken(userExists);
+                return Ok(_Token1);
+                //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+            }
+
+            
             User user = new User()
             {
                 Email = model.Email,
-                UserName = model.Email,
+                UserName = string.Concat(_Provider.Label, "", model.Email),
                 SecurityStamp = Guid.NewGuid().ToString(),
                 FirstName = model.firstName,
                 LastName = model.lastName,
                 Telephone = model.Telephone,
                 Address = model.Address,
                 BirthDate = model.BirthDate,
-                Sex = model.Sex,
-
+                Gender = model.Gender,
+                //Provider= _Provider
 
             };
             var result = await userManager.CreateAsync(user);
 
 
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response <User>{  Message = "User creation failed! Please check user details and try again." });
 
-               // Send an email with this link
+            // Send an email with this link
             //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
             //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
             //await _EmailSender.SendEmailAsync(model.Email, "Confirm your account",
@@ -129,12 +147,14 @@ namespace blasa.access.management.web.Controllers
             var _Token = await GetToken(user);
 
 
-            _response.Status = "Success";
-            _response.Message = "User created successfully!";
-            _response.ReturnObject = user;
-            _response.token = _Token.Token;
-            _response.expiration = _Token.Expiration;
-            return Ok(_response);
+            //_response.Status = "Success";
+            //_response.Message = "User created successfully!";
+            //_response.Data = user;
+            //_response.token = _Token.Token;
+            //_response.expiration = _Token.Expiration;
+            //return Ok(_response);
+
+            return Ok(new Response<User> { Data = user, token = _Token.Token });
         }
 
     }

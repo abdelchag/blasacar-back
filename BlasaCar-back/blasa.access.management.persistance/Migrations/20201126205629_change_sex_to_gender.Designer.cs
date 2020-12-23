@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using blasa.access.management.persistance.Contexts;
@@ -9,13 +10,13 @@ using blasa.access.management.persistance.Contexts;
 namespace blasa.access.management.persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201126205629_change_sex_to_gender")]
+    partial class change_sex_to_gender
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("AccessManagement")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
@@ -150,33 +151,6 @@ namespace blasa.access.management.persistance.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("blasa.access.management.Core.Domain.Entities.Provider", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Label")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Provider");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Label = "Facebook"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Label = "Gmail"
-                        });
-                });
-
             modelBuilder.Entity("blasa.access.management.Core.Domain.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -249,9 +223,6 @@ namespace blasa.access.management.persistance.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
 
-                    b.Property<int?>("ProviderId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
@@ -273,8 +244,6 @@ namespace blasa.access.management.persistance.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasName("UserNameIndex");
-
-                    b.HasIndex("ProviderId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -328,13 +297,6 @@ namespace blasa.access.management.persistance.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("blasa.access.management.Core.Domain.Entities.User", b =>
-                {
-                    b.HasOne("blasa.access.management.Core.Domain.Entities.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId");
                 });
 #pragma warning restore 612, 618
         }

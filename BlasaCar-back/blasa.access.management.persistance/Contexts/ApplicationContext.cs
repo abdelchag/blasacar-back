@@ -15,9 +15,21 @@ namespace blasa.access.management.persistance.Contexts
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        base.OnModelCreating(builder);
-    }
-   
+            builder.HasDefaultSchema("AccessManagement");
+            base.OnModelCreating(builder);
+            builder.Entity<Provider>().HasData(
+               new Provider  {  Id = 1,  Label = "Facebook"},
+               new Provider  { Id = 2, Label = "Gmail" }
+           );
+           
+
+             
+             
+
+          
+        }
+       
+
         public DbSet<User> Users { get; set; }
         public async Task<int> SaveChangesAsync()
         {
