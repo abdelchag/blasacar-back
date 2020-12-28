@@ -13,6 +13,9 @@ using System.Text;
 using blasa.access.management.Core.Domain.Entities;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Linq;
+using AutoMapper;
+using blasa.access.management.web.Dto;
+
 namespace blasa.access.management.web.Controllers
 {
     [Route("api/Access-Management/[controller]")]
@@ -25,11 +28,11 @@ namespace blasa.access.management.web.Controllers
         private readonly IResponse<User> _response;
         private readonly IEmailSender _EmailSender;
         private readonly IToken _Token;
-        
+        private readonly IMapper _mapper;
 
-        
+
         public UserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, 
-            IResponse<User> response, IEmailSender EmailSender  , IToken Token )
+            IResponse<User> response, IEmailSender EmailSender  , IToken Token, IMapper mapper)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -37,6 +40,7 @@ namespace blasa.access.management.web.Controllers
             this._response = response;
             this._EmailSender = EmailSender;
             this._Token = Token;
+            _mapper = mapper;
         }
 
         [HttpPost]
@@ -47,7 +51,7 @@ namespace blasa.access.management.web.Controllers
             if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
-                return Ok(new Response<User> { Data = user, token = _Token.Token });
+                return Ok(new Response<UserDto> { Data = _mapper.Map<UserDto>(user), token = _Token.Token });
                 //return Ok(new
                 //{
                 //    token = _Token.Token,
@@ -115,10 +119,10 @@ namespace blasa.access.management.web.Controllers
             };
             var result = await userManager.CreateAsync(user, model.Password);
 
-
+            
             if (!result.Succeeded)
                 
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> { Message = "User creation failed! Please check user details and try again."});
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Message = "User creation failed! Please check user details and try again."});
 
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
@@ -148,7 +152,7 @@ namespace blasa.access.management.web.Controllers
             //_response.token = _Token.Token;
             //_response.expiration = _Token.Expiration;
             //return Ok(_response);
-            return Ok(new Response<User> { Data = user, token = _Token.Token });
+            return Ok(new Response<UserDto> { Data = _mapper.Map<UserDto>(user), token = _Token.Token });
         }
 
           }

@@ -1,4 +1,6 @@
-﻿using blasa.access.management.Core.Domain.Entities;
+﻿using AutoMapper;
+using blasa.access.management.Core.Domain.Entities;
+using blasa.access.management.web.Dto;
 using blasa.access.management.web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -24,10 +26,11 @@ namespace blasa.access.management.web.Controllers
         private readonly IResponse<User> _response;
         private readonly IEmailSender _EmailSender;
         private readonly IToken _Token;
+        private readonly IMapper _mapper;
 
 
         public ExternalUserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,
-            IResponse<User> response, IEmailSender EmailSender, IToken Token)
+            IResponse<User> response, IEmailSender EmailSender, IToken Token, IMapper mapper)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -35,6 +38,7 @@ namespace blasa.access.management.web.Controllers
             _response = response;
             _EmailSender = EmailSender;
             _Token = Token;
+            _mapper = mapper;
         }
 
         //[HttpPost]
@@ -154,7 +158,7 @@ namespace blasa.access.management.web.Controllers
             //_response.expiration = _Token.Expiration;
             //return Ok(_response);
 
-            return Ok(new Response<User> { Data = user, token = _Token.Token });
+            return Ok(new Response<UserDto> { Data = _mapper.Map<UserDto>(user), token = _Token.Token });
         }
 
     }

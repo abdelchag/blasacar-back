@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using blasa.access.management.Core.Application;
 using blasa.access.management.Core.Domain.Entities;
 using blasa.access.management.persistance;
@@ -44,6 +45,21 @@ namespace blasa.access.management.web
             services.Add(new ServiceDescriptor(typeof(IToken), new Token()));
             services.AddTransient<IEmailSender, EmailSender>();
 
+
+            // Auto Mapper Configurations
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            #endregion
+
+            #region AutoMapper           
+
+            services.AddAutoMapper(typeof(Startup));
+            services.AddControllersWithViews();
             #endregion
 
 
