@@ -101,7 +101,7 @@ namespace blasa.access.management.web.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> {   Message = "User already exists!" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> {   Message = "BLASA_EXISTING_ACCOUNT" });
 
             User user = new User()
             {
@@ -122,7 +122,7 @@ namespace blasa.access.management.web.Controllers
             
             if (!result.Succeeded)
                 
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Message = "BLASA_EXISTING_ACCOUNT" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Message = "BLASA_User_creation_failed" });
 
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 

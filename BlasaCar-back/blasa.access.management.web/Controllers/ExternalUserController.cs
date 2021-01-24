@@ -104,7 +104,7 @@ namespace blasa.access.management.web.Controllers
                 _Provider.Id = 1;
                 _Provider.Label = "Facebook";
             }
-            else if (model.Provider.ToLower() == "gmail")
+            else 
             {
                 _Provider.Id = 2;
                 _Provider.Label = "Gmail";
@@ -173,11 +173,11 @@ namespace blasa.access.management.web.Controllers
                 _Provider.Id = 1;
                 _Provider.Label = "Facebook";
             }
-            //else if (model.Provider.ToLower() == "gmail")
-            //{
-            //    _Provider.Id = 2;
-            //    _Provider.Label = "Gmail";
-            //}
+            else
+            {
+                _Provider.Id = 2;
+                _Provider.Label = "Gmail";
+            }
 
             var userExists = await userManager.FindByNameAsync(string.Concat(_Provider.Label, "", model.Email));
             string ProviderExist = userExists?.Provider?.Label;
@@ -208,7 +208,7 @@ namespace blasa.access.management.web.Controllers
 
 
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> { Message = "User creation failed! Please check user details and try again." });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> { Message = "BLASA_User_creation_failed" });
 
             // Send an email with this link
             //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
