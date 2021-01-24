@@ -18,7 +18,7 @@ using blasa.access.management.web.Dto;
 
 namespace blasa.access.management.web.Controllers
 {
-    [Route("api/Access-Management/[controller]")]
+    [Route("api/access-management/user")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -122,7 +122,7 @@ namespace blasa.access.management.web.Controllers
             
             if (!result.Succeeded)
                 
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Message = "User creation failed! Please check user details and try again."});
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Message = "BLASA_EXISTING_ACCOUNT" });
 
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
