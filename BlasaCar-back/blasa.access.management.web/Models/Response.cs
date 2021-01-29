@@ -17,19 +17,20 @@ namespace blasa.access.management.web.Models
         public Response()
         {
         }
-        public Response(T data, string token, string message = null)
-        {
-            Succeeded = true;
-            Message = message;
-            Data = data;
-            this.token = token;
-        }
-        public Response(string Message, List<IdentityError> errors = null)
-        {
-            Succeeded = false;
-            this.Message = Message;
-            Errors = errors;
-        }
+        //public Response(bool succeeded,T data, string token, DateTime expiration,string message )
+        //{
+        //    this.Succeeded = succeeded;
+        //    this.Message = message;
+        //    this.Data = data;
+        //    this.token = token;
+        //    this.expiration = expiration;
+        //}
+        //public Response(string Message, List<IdentityError> errors = null)
+        //{
+        //    Succeeded = false;
+        //    this.Message = Message;
+        //    Errors = errors;
+        //}
         public bool Succeeded { get; set; }
         public string Message { get; set; }
         //public List<string> Errors { get; set; }

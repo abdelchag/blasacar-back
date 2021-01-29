@@ -43,6 +43,17 @@ namespace blasa.access.management.web.Controllers
             _mapper = mapper;
         }
 
+
+        /// <summary>
+        /// Login a BlasaCar account.
+        /// </summary>   
+        /// <returns>login a BlasaCar account</returns>
+        /// <response code="200">Success : return the BlasaCar account</response>
+        [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
+        [Produces("application/json")]
+
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -51,7 +62,9 @@ namespace blasa.access.management.web.Controllers
             if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
-                return Ok(new Response<UserDto> { Data = _mapper.Map<UserDto>(user), token = _Token.Token });
+               
+                return Ok(new Response<UserDto> { Succeeded = true, Data = _mapper.Map<UserDto>(user), token = _Token.Token, expiration = _Token.Expiration, Message = null });
+
                 //return Ok(new
                 //{
                 //    token = _Token.Token,
@@ -95,13 +108,24 @@ namespace blasa.access.management.web.Controllers
 
         }
 
+
+
+        /// <summary>
+        /// Create a new BlasaCar account from Facebook.
+        /// </summary>   
+        /// <returns>A newly created BlasaCar account</returns>
+        /// <response code="200">Success : returns the newly created BlasaCar account</response>
+        /// <response code="500">Error : error message values : "Blasa_User_creation_failed"  Or "BLASA_EXISTING_ACCOUNT" </response>
+        [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status500InternalServerError)]
+        [Produces("application/json")]
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> {   Message = "BLASA_EXISTING_ACCOUNT" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> {Succeeded=false,   Message = "BLASA_EXISTING_ACCOUNT" });
 
             User user = new User()
             {
@@ -122,7 +146,7 @@ namespace blasa.access.management.web.Controllers
             
             if (!result.Succeeded)
                 
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Message = "BLASA_User_creation_failed" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Succeeded = false,  Message = "BLASA_User_creation_failed" });
 
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
@@ -152,8 +176,10 @@ namespace blasa.access.management.web.Controllers
             //_response.token = _Token.Token;
             //_response.expiration = _Token.Expiration;
             //return Ok(_response);
-            return Ok(new Response<UserDto> { Data = _mapper.Map<UserDto>(user), token = _Token.Token });
+          
+            return Ok(new Response<UserDto> { Succeeded = true, Data = _mapper.Map<UserDto>(user), token = _Token.Token, expiration = _Token.Expiration, Message = null });
+
         }
 
-          }
+    }
 }
