@@ -97,9 +97,9 @@ namespace blasa.access.management.web.Controllers
         /// </summary>   
         /// <returns>A newly created BlasaCar account</returns>
         /// <response code="200">Success : returns the newly created BlasaCar account</response>
-        /// <response code="500">Error : error message : blasa_User_creation_failed</response>
+         
         [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
         [Produces("application/json")]
 
         [HttpPost]
@@ -152,7 +152,8 @@ namespace blasa.access.management.web.Controllers
 
 
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response <UserDto> {  Message = "blasa_User_creation_failed" });
+                 
+                return StatusCode(StatusCodes.Status400BadRequest, new Error   { code= StatusCodes.Status400BadRequest, message = "blasa_User_creation_failed" });
 
             // Send an email with this link
             //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -184,8 +185,8 @@ namespace blasa.access.management.web.Controllers
         /// <response code="200">Success : return the BlasaCar account</response>
         [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
          [Produces("application/json")]
- 
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(Error), StatusCodes.Status401Unauthorized)]
+        
 
         [HttpPost ]
          [Route("login")]
@@ -215,7 +216,9 @@ namespace blasa.access.management.web.Controllers
 
                 //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
             }
-            return Unauthorized();
+            //return  Unauthorized("BlasaCar_login_failed_user_not_exists");
+
+            return StatusCode(StatusCodes.Status401Unauthorized, new Error {code    = StatusCodes.Status401Unauthorized, message = "BlasaCar_login_failed_user_not_exists" });
 
             //User user = new User()
             //{

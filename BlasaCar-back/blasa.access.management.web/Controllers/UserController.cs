@@ -52,7 +52,7 @@ namespace blasa.access.management.web.Controllers
         [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
         [Produces("application/json")]
 
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(Error), StatusCodes.Status401Unauthorized)]
 
         [HttpPost]
         [Route("login")]
@@ -72,7 +72,9 @@ namespace blasa.access.management.web.Controllers
                 //    user=User,
                 //});
             }
-            return Unauthorized();
+            //return Unauthorized();
+            return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = StatusCodes.Status401Unauthorized, message = "BlasaCar_login_failed" });
+
         }
 
         private async Task<IToken> GetToken(User user)
@@ -115,9 +117,9 @@ namespace blasa.access.management.web.Controllers
         /// </summary>   
         /// <returns>A newly created BlasaCar account</returns>
         /// <response code="200">Success : returns the newly created BlasaCar account</response>
-        /// <response code="500">Error : error message values : "Blasa_User_creation_failed"  Or "BLASA_EXISTING_ACCOUNT" </response>
+ 
         [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
         [Produces("application/json")]
         [HttpPost]
         [Route("register")]
@@ -125,7 +127,7 @@ namespace blasa.access.management.web.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<User> {Succeeded=false,   Message = "BLASA_EXISTING_ACCOUNT" });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = StatusCodes.Status400BadRequest, message = "BLASA_EXISTING_ACCOUNT" });
 
             User user = new User()
             {
@@ -145,8 +147,8 @@ namespace blasa.access.management.web.Controllers
 
             
             if (!result.Succeeded)
-                
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response<UserDto> { Succeeded = false,  Message = "BLASA_User_creation_failed" });
+                 
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = StatusCodes.Status400BadRequest,  message = "BLASA_User_creation_failed" });
 
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 

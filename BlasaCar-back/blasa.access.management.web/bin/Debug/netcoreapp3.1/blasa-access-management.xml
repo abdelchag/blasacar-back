@@ -10,7 +10,6 @@
             </summary>   
             <returns>A newly created BlasaCar account</returns>
             <response code="200">Success : returns the newly created BlasaCar account</response>
-            <response code="500">Error : error message : blasa_User_creation_failed</response>
         </member>
         <member name="M:blasa.access.management.web.Controllers.ExternalUserController.login(blasa.access.management.web.Models.LoginModelExternal)">
             <summary>
@@ -32,7 +31,6 @@
             </summary>   
             <returns>A newly created BlasaCar account</returns>
             <response code="200">Success : returns the newly created BlasaCar account</response>
-            <response code="500">Error : error message values : "Blasa_User_creation_failed"  Or "BLASA_EXISTING_ACCOUNT" </response>
         </member>
     </members>
 </doc>
