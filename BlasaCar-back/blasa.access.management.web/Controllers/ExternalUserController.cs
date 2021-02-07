@@ -153,7 +153,7 @@ namespace blasa.access.management.web.Controllers
 
             if (!result.Succeeded)
                  
-                return StatusCode(StatusCodes.Status400BadRequest, new Error   { code= StatusCodes.Status400BadRequest, message = "blasa_User_creation_failed" });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error   { code = "blasa_User_creation_failed", message = "blasa_User_creation_failed" });
 
             // Send an email with this link
             //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -218,8 +218,7 @@ namespace blasa.access.management.web.Controllers
             }
             //return  Unauthorized("BlasaCar_login_failed_user_not_exists");
 
-            return StatusCode(StatusCodes.Status401Unauthorized, new Error {code    = StatusCodes.Status401Unauthorized, message = "BlasaCar_login_failed_user_not_exists" });
-
+              return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = "BLASACAR_LOGIN_FAILED_USER_NOT_EXISTE".ToUpper(), message = "wrong login : this user does not exist in the database" });
             //User user = new User()
             //{
             //    Email = model.Email,

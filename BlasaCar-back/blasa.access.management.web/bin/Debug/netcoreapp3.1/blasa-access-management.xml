@@ -27,7 +27,7 @@
         </member>
         <member name="M:blasa.access.management.web.Controllers.UserController.Register(blasa.access.management.web.Models.RegisterModel)">
             <summary>
-            Create a new BlasaCar account from Facebook.
+            Create a new BlasaCar account.
             </summary>   
             <returns>A newly created BlasaCar account</returns>
             <response code="200">Success : returns the newly created BlasaCar account</response>

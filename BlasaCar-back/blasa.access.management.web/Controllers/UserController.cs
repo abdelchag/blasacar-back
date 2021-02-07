@@ -59,7 +59,9 @@ namespace blasa.access.management.web.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
             var user = await userManager.FindByNameAsync(model.Email);
-            if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
+
+            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = "BLASACAR_LOGIN_FAILED_USER_NOT_EXISTE".ToUpper(), message = "wrong login : this user does not exist in the database" });
+            if ( await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
                
@@ -73,7 +75,7 @@ namespace blasa.access.management.web.Controllers
                 //});
             }
             //return Unauthorized();
-            return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = StatusCodes.Status401Unauthorized, message = "BlasaCar_login_failed" });
+            return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = "BLASACAR_LOGIN_FAILED_WRONG_PASSWORD".ToUpper(), message = "wrong login : the password is incorrect" });
 
         }
 
@@ -113,7 +115,7 @@ namespace blasa.access.management.web.Controllers
 
 
         /// <summary>
-        /// Create a new BlasaCar account from Facebook.
+        /// Create a new BlasaCar account.
         /// </summary>   
         /// <returns>A newly created BlasaCar account</returns>
         /// <response code="200">Success : returns the newly created BlasaCar account</response>
@@ -127,8 +129,8 @@ namespace blasa.access.management.web.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = StatusCodes.Status400BadRequest, message = "BLASA_EXISTING_ACCOUNT" });
-
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = "BlasaCar_EXISTING_ACCOUNT", message = "wrong Register :this user exists in the database ! " });
+            
             User user = new User()
             {
                 Email = model.Email,
@@ -139,25 +141,25 @@ namespace blasa.access.management.web.Controllers
                 Telephone =     model.Telephone,
                 Address   =     model.Address,
                 BirthDate =     model.BirthDate,
-                Gender       =  model.Gender,
-                
+                Gender       =  model.Gender,                
 
             };
             var result = await userManager.CreateAsync(user, model.Password);
 
             
             if (!result.Succeeded)
-                 
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = StatusCodes.Status400BadRequest,  message = "BLASA_User_creation_failed" });
-
+            { List<IdentityError> listErruer = result.Errors.ToList(); 
+                
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = "BLASA_User_creation_failed",  message = "BLASA_User_creation_failed" });
+            }
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
 
 
 
-            
 
-             
+
+
             // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
             // Send an email with this link
             var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
