@@ -11,6 +11,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.access.management.per
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.access.management.Core", "blasaCar.access.management.Core\blasa.access.management.Core.csproj", "{1AE7BD26-419A-4B3C-AA53-FD66CBBD5AEC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blasa-travel", "blasa-travel", "{8EED0FC5-561B-420A-A112-BDC8EF769567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.travel.web", "blasa.travel.web\blasa.travel.web.csproj", "{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.travel.persistance", "blasa.travel.persistance\blasa.travel.persistance.csproj", "{4178296E-26F8-420E-B646-1E75EEDB3C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.travel.Core", "blasa.travel.core\blasa.travel.Core.csproj", "{BC294799-8F61-4437-83BF-F895096F58E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Common", "_Common", "{4BE0359C-C160-405E-A172-D40BC187B756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +41,22 @@ Global
 		{1AE7BD26-419A-4B3C-AA53-FD66CBBD5AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AE7BD26-419A-4B3C-AA53-FD66CBBD5AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AE7BD26-419A-4B3C-AA53-FD66CBBD5AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4178296E-26F8-420E-B646-1E75EEDB3C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4178296E-26F8-420E-B646-1E75EEDB3C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4178296E-26F8-420E-B646-1E75EEDB3C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4178296E-26F8-420E-B646-1E75EEDB3C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC294799-8F61-4437-83BF-F895096F58E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC294799-8F61-4437-83BF-F895096F58E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC294799-8F61-4437-83BF-F895096F58E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC294799-8F61-4437-83BF-F895096F58E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +65,10 @@ Global
 		{700AE6CD-0551-43CD-84BC-57AC11147C6C} = {36C43B76-E6DC-4C96-A36A-171442BC7233}
 		{C2815C6B-86A7-4B7C-A16B-F1B0213E9A84} = {36C43B76-E6DC-4C96-A36A-171442BC7233}
 		{1AE7BD26-419A-4B3C-AA53-FD66CBBD5AEC} = {36C43B76-E6DC-4C96-A36A-171442BC7233}
+		{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
+		{4178296E-26F8-420E-B646-1E75EEDB3C85} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
+		{BC294799-8F61-4437-83BF-F895096F58E0} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
+		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B} = {4BE0359C-C160-405E-A172-D40BC187B756}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6D67E21-45A6-4FDF-915F-8BC258DD74C0}

@@ -150,7 +150,7 @@ namespace blasa.access.management.web.Controllers
             if (!result.Succeeded)
             { List<IdentityError> listErruer = result.Errors.ToList(); 
                 
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = "BLASA_User_creation_failed",  message = "BLASA_User_creation_failed" });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = "BLASACAR_User_creation_failed_PasswordTooShort",  message = "Passwords must be at least 8 characters." });
             }
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 

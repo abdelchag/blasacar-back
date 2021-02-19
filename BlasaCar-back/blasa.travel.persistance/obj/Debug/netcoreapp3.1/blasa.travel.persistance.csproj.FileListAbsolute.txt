@@ -1,0 +1,5 @@
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.persistance.deps.json
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.persistance.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.csprojAssemblyReference.cache
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.AssemblyInfoInputs.cache
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.AssemblyInfo.cs
