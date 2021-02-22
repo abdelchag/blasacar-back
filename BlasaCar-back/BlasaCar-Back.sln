@@ -13,15 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.access.management.Cor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blasa-travel", "blasa-travel", "{8EED0FC5-561B-420A-A112-BDC8EF769567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.travel.web", "blasa.travel.web\blasa.travel.web.csproj", "{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.travel.web", "blasa.travel.web\blasa.travel.web.csproj", "{0C804BC3-36FB-4AA2-BCDF-0B5A59BDEB5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.travel.persistance", "blasa.travel.persistance\blasa.travel.persistance.csproj", "{4178296E-26F8-420E-B646-1E75EEDB3C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.travel.persistance", "blasa.travel.persistance\blasa.travel.persistance.csproj", "{4178296E-26F8-420E-B646-1E75EEDB3C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.travel.Core", "blasa.travel.core\blasa.travel.Core.csproj", "{BC294799-8F61-4437-83BF-F895096F58E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.travel.Core", "blasa.travel.core\blasa.travel.Core.csproj", "{BC294799-8F61-4437-83BF-F895096F58E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Common", "_Common", "{4BE0359C-C160-405E-A172-D40BC187B756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.hosting", "blasa.hosting\blasa.hosting.csproj", "{46448CC7-1934-4831-8162-02FEEE348908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46448CC7-1934-4831-8162-02FEEE348908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46448CC7-1934-4831-8162-02FEEE348908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46448CC7-1934-4831-8162-02FEEE348908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46448CC7-1934-4831-8162-02FEEE348908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{4178296E-26F8-420E-B646-1E75EEDB3C85} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
 		{BC294799-8F61-4437-83BF-F895096F58E0} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
 		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B} = {4BE0359C-C160-405E-A172-D40BC187B756}
+		{46448CC7-1934-4831-8162-02FEEE348908} = {4BE0359C-C160-405E-A172-D40BC187B756}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6D67E21-45A6-4FDF-915F-8BC258DD74C0}

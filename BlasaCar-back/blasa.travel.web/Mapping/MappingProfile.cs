@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using blasa.travel.Core.Domain.Entities;
+using blasa.travel.web.Models;
 
 namespace blasa.travel.web.Mapping
 {
@@ -11,8 +9,8 @@ namespace blasa.travel.web.Mapping
         public MappingProfile()
         {
             // Add as many of these lines as you need to map your objects
-            //CreateMap<User, UserDto>();
-            //CreateMap<UserDto, User>();
+             CreateMap<Travel, TravelModel>();
+             CreateMap<TravelModel, Travel>();
         }
     }
 }

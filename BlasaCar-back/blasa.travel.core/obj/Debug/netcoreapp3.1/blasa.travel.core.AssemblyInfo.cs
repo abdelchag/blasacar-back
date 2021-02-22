@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("blasa.travel.core")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("blasa.travel.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("blasa.travel.core")]
-[assembly: System.Reflection.AssemblyTitleAttribute("blasa.travel.core")]
+[assembly: System.Reflection.AssemblyProductAttribute("blasa.travel.Core")]
+[assembly: System.Reflection.AssemblyTitleAttribute("blasa.travel.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

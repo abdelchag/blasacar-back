@@ -5,7 +5,7 @@ using System.Text;
 
 namespace blasa.travel.Core.Domain.Entities
 {
-    class Travel : AuditableBaseEntity
+   public class Travel : AuditableBaseEntity
     {
 
         public string DepartureCity { get; set; }
