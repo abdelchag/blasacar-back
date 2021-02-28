@@ -1654,6 +1654,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "blasa.tarvel.DependencyInjectionContainer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "blasa.travel.Core": "1.0.0",
+          "blasa.travel.persistance": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/blasa.tarvel.DependencyInjectionContainer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/blasa.tarvel.DependencyInjectionContainer.dll": {}
+        }
+      },
       "blasa.travel.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -6098,6 +6112,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "blasa.tarvel.DependencyInjectionContainer/1.0.0": {
+      "type": "project",
+      "path": "../Blasa.Tarvel.DependencyInjectionContainer/blasa.tarvel.DependencyInjectionContainer.csproj",
+      "msbuildProject": "../Blasa.Tarvel.DependencyInjectionContainer/blasa.tarvel.DependencyInjectionContainer.csproj"
+    },
     "blasa.travel.Core/1.0.0": {
       "type": "project",
       "path": "../blasa.travel.core/blasa.travel.Core.csproj",
@@ -6123,7 +6142,7 @@
       "Swashbuckle.AspNetCore >= 5.6.3",
       "Swashbuckle.AspNetCore.Swagger >= 5.6.3",
       "Tools >= 1.0.0",
-      "blasa.travel.persistance >= 1.0.0"
+      "blasa.tarvel.DependencyInjectionContainer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6156,8 +6175,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {
-              "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj"
+            "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Blasa.Tarvel.DependencyInjectionContainer\\blasa.tarvel.DependencyInjectionContainer.csproj": {
+              "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Blasa.Tarvel.DependencyInjectionContainer\\blasa.tarvel.DependencyInjectionContainer.csproj"
             },
             "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj": {
               "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj"

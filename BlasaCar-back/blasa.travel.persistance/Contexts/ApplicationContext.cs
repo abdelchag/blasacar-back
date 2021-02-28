@@ -5,7 +5,7 @@ using blasa.travel.Core.Application.Repositories;
 
 namespace blasa.travel.persistance.Contexts
 {
-    public class ApplicationDbContext : DbContext , IApplicationDbContext
+    public class ApplicationDbContext : DbContext //, IApplicationDbContext
      
     {  
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)

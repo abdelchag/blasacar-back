@@ -9,15 +9,15 @@ namespace blasa.travel.Core.Application.Commands
 {
     public class TravelCommandAsync : IGenericCommandAsync<Travel>
     {
-        IGenericRepositoryAsync<Travel> TravelRepositoryAsync;
+        IGenericRepositoryAsync<Travel> _TravelRepositoryAsync;
         public TravelCommandAsync( IGenericRepositoryAsync<Travel> TravelRepositoryAsync)
         {
-            this.TravelRepositoryAsync = TravelRepositoryAsync;
+            _TravelRepositoryAsync = TravelRepositoryAsync;
         }
-        public TravelCommandAsync() { }
+     //   public TravelCommandAsync() { }
         public async Task<Travel> AddAsync(Travel obj)
         {
-            Travel newTravel = await TravelRepositoryAsync.AddAsync(obj);
+            Travel newTravel = await _TravelRepositoryAsync.AddAsync(obj);
              
 
             return newTravel;

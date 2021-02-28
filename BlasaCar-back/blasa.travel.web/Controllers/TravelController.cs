@@ -14,15 +14,16 @@ namespace blasa.travel.web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //Adopter of InputPort
     public class TravelController : ControllerBase
     {
 
 
-        private readonly IGenericCommandAsync<Travel> TravelGenericServices;
+        private readonly IGenericCommandAsync<Travel> _TravelGenericServices;
         private readonly IMapper _mapper;
         public TravelController(IGenericCommandAsync<Travel> TravelGenericServices, IMapper mapper)
         {
-            this.TravelGenericServices = TravelGenericServices;
+            _TravelGenericServices = TravelGenericServices;
             _mapper = mapper;
         }
 
@@ -33,7 +34,8 @@ namespace blasa.travel.web.Controllers
          
         {
             var TravelEntity = _mapper.Map<Travel>(_travelModel);
-            var newTravelResult = await TravelGenericServices.AddAsync(TravelEntity);
+            //var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
+            var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
 
             if (newTravelResult is null)
             {

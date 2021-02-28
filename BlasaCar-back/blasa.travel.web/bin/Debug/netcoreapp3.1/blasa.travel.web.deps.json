@@ -31,7 +31,7 @@
           "Swashbuckle.AspNetCore": "5.6.3",
           "Swashbuckle.AspNetCore.Swagger": "5.6.3",
           "Tools": "1.0.0",
-          "blasa.travel.persistance": "1.0.0",
+          "blasa.tarvel.DependencyInjectionContainer": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1562,6 +1562,18 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "blasa.tarvel.DependencyInjectionContainer/1.0.0": {
+        "dependencies": {
+          "blasa.travel.Core": "1.0.0",
+          "blasa.travel.persistance": "1.0.0"
+        },
+        "runtime": {
+          "blasa.tarvel.DependencyInjectionContainer.dll": {}
+        },
+        "compile": {
+          "blasa.tarvel.DependencyInjectionContainer.dll": {}
         }
       },
       "blasa.travel.Core/1.0.0": {
@@ -4012,6 +4024,11 @@
       "sha512": "sha512-VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "blasa.tarvel.DependencyInjectionContainer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "blasa.travel.Core/1.0.0": {
       "type": "project",

@@ -79,3 +79,5 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\n
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.pdb
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.genruntimeconfig.cache
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.pdb

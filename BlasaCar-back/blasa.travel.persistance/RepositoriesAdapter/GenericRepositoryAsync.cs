@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace blasa.travel.persistance.Repositories
 {
+    //Adopter of OutputPort
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
         private readonly ApplicationDbContext _dbContext;

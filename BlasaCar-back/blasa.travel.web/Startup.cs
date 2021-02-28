@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+
 using blasa.travel.Core.Application.Commands;
+using blasa.travel.Core.Application.Repositories;
 using blasa.travel.Core.Domain.Entities;
-using blasa.travel.persistance;
+using blasa.tarvel.DependencyInjectionContainer;
 using blasa.travel.web.Mapping;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -36,12 +38,18 @@ namespace blasa.travel.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+
             #region Services application
 
             //services.Add(new ServiceDescriptor(typeof(IResponse<User>), new Response<User>()));
             //services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync), new Token()));
-            services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync<Travel>), new TravelCommandAsync()));
+            //services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync<Travel>), new GenericCommandAsync<Travel>(GenericRepositoryAsync<Travel>)));
             services.AddTransient<IEmailSender, Models.EmailSender>();
+            //dependency  injection of Infrastructure
+            //services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
+            AddPersistence(services, Configuration);
+
 
 
             // Auto Mapper Configurations
@@ -97,8 +105,7 @@ namespace blasa.travel.web
             });
             #endregion
 
-            //dependency  injection of Infrastructure
-            services.AddPersistence( Configuration);
+          
             ////dependency  injection of Application layer
             //services.AddApplication();
             // For Identity  
@@ -194,6 +201,10 @@ namespace blasa.travel.web
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "blasa-travel");
             });
             #endregion
+        }
+        private static void AddPersistence(IServiceCollection services, IConfiguration configuration)
+        {
+            DependencyInjectionContainer.RegisterServices(services, configuration);
         }
     }
 } 

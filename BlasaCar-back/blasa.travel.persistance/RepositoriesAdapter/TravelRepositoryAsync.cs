@@ -6,6 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using blasa.travel.Core.Domain.Entities;
 
+
+
+ 
 namespace blasa.travel.persistance.Repositories
 {
     public class TravelRepositoryAsync : IGenericRepositoryAsync<Travel>  
@@ -19,13 +22,13 @@ namespace blasa.travel.persistance.Repositories
 
         public virtual async Task<Travel> GetByIdAsync(int id)
         {
-            return await _dbContext.Set<Travel>().FindAsync(id);
+            return await _dbContext.Travels.FindAsync(id);
         }
 
         public async Task<IReadOnlyList<Travel>> GetPagedReponseAsync(int pageNumber, int pageSize)
         {
             return await _dbContext
-                .Set<Travel>()
+                .Travels
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .AsNoTracking()
@@ -34,27 +37,28 @@ namespace blasa.travel.persistance.Repositories
 
         public async Task<Travel> AddAsync(Travel entity)
         {
-            await _dbContext.Set<Travel>().AddAsync(entity);
+            await _dbContext.Travels.AddAsync(entity);
             await _dbContext.SaveChangesAsync();
             return entity;
         }
 
-        public async Task UpdateAsync(Travel entity)
+        public async Task UpdateAsync(Travel travel)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
+          //  _dbContext.(entity).State = EntityState.Modified;
+            _dbContext.Entry(travel).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(Travel entity)
         {
-            _dbContext.Set<Travel>().Remove(entity);
+            _dbContext.Travels.Remove(entity);
             await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IReadOnlyList<Travel>> GetAllAsync()
         {
             return await _dbContext
-                 .Set<Travel>()
+                 .Travels
                  .ToListAsync();
         }
     }

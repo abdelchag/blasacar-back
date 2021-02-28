@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\blasa.travel.persistance\blasa.travel.persistance.csproj" />
+    <ProjectReference Include="..\Blasa.Tarvel.DependencyInjectionContainer\blasa.tarvel.DependencyInjectionContainer.csproj" />
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
