@@ -9,6 +9,7 @@ using blasa.access.management.Core.Domain.Entities;
 using blasa.access.management.persistance;
 using blasa.access.management.persistance.Contexts;
 using blasa.access.management.web.Models;
+using blasa.tarvel.DependencyInjectionContainer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -100,7 +101,10 @@ namespace blasa.access.management.web
             #endregion
 
            //dependency  injection of Infrastructure
-            services.AddPersistence(Configuration); 
+            //services.AddPersistence(Configuration);
+
+            DependencyInjectionContainer.AddPersistenceAuth(services, Configuration);
+
             //dependency  injection of Application layer
             services.AddApplication();
             // For Identity  
@@ -120,7 +124,7 @@ namespace blasa.access.management.web
             })
               //services.AddIdentity<ApplicationUser, IdentityRole>()
 
-              .AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddEntityFrameworkStores<AuthentificationDbContext>()
               .AddDefaultTokenProviders();
 
             // Adding Authentication  

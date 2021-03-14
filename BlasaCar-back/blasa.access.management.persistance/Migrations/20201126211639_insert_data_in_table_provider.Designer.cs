@@ -9,7 +9,7 @@ using blasa.access.management.persistance.Contexts;
 
 namespace blasa.access.management.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(AuthentificationDbContext))]
     [Migration("20201126211639_insert_data_in_table_provider")]
     partial class insert_data_in_table_provider
     {

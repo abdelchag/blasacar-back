@@ -23,8 +23,8 @@ namespace blasa.access.management.Core.Application.Features.Users.Commands.Creat
         public string MotDePasse { get; set; }
         public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, string>
         {
-            private readonly IApplicationDbContext _context;
-            public CreateUserCommandHandler(IApplicationDbContext context)
+            private readonly IAuthentificationDbContext _context;
+            public CreateUserCommandHandler(IAuthentificationDbContext context)
             {
                 _context = context;
             }

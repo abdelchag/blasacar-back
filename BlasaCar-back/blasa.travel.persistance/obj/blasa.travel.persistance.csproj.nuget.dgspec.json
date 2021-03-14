@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {}
+    "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {}
   },
   "projects": {
-    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
+    "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
+        "projectUniqueName": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
         "projectName": "blasa.travel.Core",
-        "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
-        "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
-        "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\obj\\",
+        "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
+        "packagesPath": "C:\\Users\\med\\.nuget\\packages\\",
+        "outputPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\med\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,20 +65,20 @@
         }
       }
     },
-    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {
+    "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
+        "projectUniqueName": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
         "projectName": "blasa.travel.persistance",
-        "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
-        "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
-        "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\obj\\",
+        "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
+        "packagesPath": "C:\\Users\\med\\.nuget\\packages\\",
+        "outputPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\med\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,8 +91,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
-                "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj"
+              "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
+                "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj"
               }
             }
           }

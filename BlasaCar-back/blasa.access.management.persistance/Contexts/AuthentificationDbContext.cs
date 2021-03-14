@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace blasa.access.management.persistance.Contexts
 {
-    public class ApplicationDbContext :    IdentityDbContext<User>, IApplicationDbContext
-     
+    public class AuthentificationDbContext :    IdentityDbContext<User>, IAuthentificationDbContext
+
     {  
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public AuthentificationDbContext(DbContextOptions<AuthentificationDbContext> options) : base(options)
     {
 
     }
@@ -21,12 +21,6 @@ namespace blasa.access.management.persistance.Contexts
                new Provider  {  Id = 1,  Label = "Facebook"},
                new Provider  { Id = 2, Label = "Gmail" }
            );
-           
-
-             
-             
-
-          
         }
        
 

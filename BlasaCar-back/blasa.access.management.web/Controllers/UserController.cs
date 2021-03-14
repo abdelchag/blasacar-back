@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using System.Linq;
 using AutoMapper;
 using blasa.access.management.web.Dto;
+using Tools.Constants;
 
 namespace blasa.access.management.web.Controllers
 {
@@ -60,7 +61,7 @@ namespace blasa.access.management.web.Controllers
         {
             var user = await userManager.FindByNameAsync(model.Email);
 
-            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = "BLASACAR_LOGIN_FAILED_USER_NOT_EXISTE".ToUpper(), message = "wrong login : this user does not exist in the database" });
+            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = ErrorConstants.BlasacarLoginFailedUserNotExiste, message = "wrong login : this user does not exist in the database" });
             if ( await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
@@ -75,7 +76,7 @@ namespace blasa.access.management.web.Controllers
                 //});
             }
             //return Unauthorized();
-            return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = "BLASACAR_LOGIN_FAILED_WRONG_PASSWORD".ToUpper(), message = "wrong login : the password is incorrect" });
+            return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = ErrorConstants.BlasacarLoginFailedWrongPassword, message = "wrong login : the password is incorrect" });
 
         }
 
@@ -129,7 +130,7 @@ namespace blasa.access.management.web.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = "BlasaCar_EXISTING_ACCOUNT", message = "wrong Register :this user exists in the database ! " });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = ErrorConstants.BlasacarExistingAccount, message = "wrong Register :this user exists in the database ! " });
             
             User user = new User()
             {
@@ -150,7 +151,7 @@ namespace blasa.access.management.web.Controllers
             if (!result.Succeeded)
             { List<IdentityError> listErruer = result.Errors.ToList(); 
                 
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = "BLASACAR_User_creation_failed_PasswordTooShort",  message = "Passwords must be at least 8 characters." });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = ErrorConstants.BlasacarUserCreationFailedPasswordToShort,  message = "Passwords must be at least 8 characters." });
             }
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 

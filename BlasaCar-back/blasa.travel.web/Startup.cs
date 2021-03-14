@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-
+using blasa.hosting;
+using blasa.tarvel.DependencyInjectionContainer;
 using blasa.travel.Core.Application.Commands;
 using blasa.travel.Core.Application.Repositories;
 using blasa.travel.Core.Domain.Entities;
-using blasa.tarvel.DependencyInjectionContainer;
+//using blasa.tarvel.DependencyInjectionContainer;
 using blasa.travel.web.Mapping;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;

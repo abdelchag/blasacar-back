@@ -9,7 +9,7 @@ using blasa.access.management.persistance.Contexts;
 
 namespace blasa.access.management.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(AuthentificationDbContext))]
     [Migration("20201126214512_add_DefaultSchema")]
     partial class add_DefaultSchema
     {

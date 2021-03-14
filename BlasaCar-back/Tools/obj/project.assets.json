@@ -2849,23 +2849,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abarrima\\.nuget\\packages\\": {},
+    "C:\\Users\\med\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj",
+      "projectUniqueName": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj",
       "projectName": "Tools",
-      "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj",
-      "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
-      "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\obj\\",
+      "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj",
+      "packagesPath": "C:\\Users\\med\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\Tools\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\med\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

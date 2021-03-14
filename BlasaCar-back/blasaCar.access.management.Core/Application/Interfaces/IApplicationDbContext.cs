@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace blasa.access.management.Core.Application.Interfaces
 {
-    public interface IApplicationDbContext
+    public interface IAuthentificationDbContext
     {
         DbSet<User> Users { get; set; }
         

@@ -11,40 +11,15 @@ namespace blasa.tarvel.DependencyInjectionContainer
 {
     public static class DependencyInjectionContainer
     {
-
-        //public static void AddPersistence(IServiceCollection services, IConfiguration configuration)
+        //public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         //{
         //    services.AddDbContext<ApplicationDbContext>(options =>
         //        options.UseNpgsql(
         //            configuration.GetConnectionString("DefaultConnection"),
         //            b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
         //    services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
         //    services.AddScoped<IGenericRepositoryAsync<Travel>, GenericRepositoryAsync<Travel>>();
-
-
         //}
-        
-        public static void Registerconfigurations(IServiceCollection services,IConfiguration configuration)
-        {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(
-                    configuration.GetConnectionString("DefaultHostingConnection"),
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-           
-             
-
-        }
-        public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(
-                    configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-
-            services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
-            services.AddScoped<IGenericRepositoryAsync<Travel>, GenericRepositoryAsync<Travel>>();
-
-
-        }
     }
 }
