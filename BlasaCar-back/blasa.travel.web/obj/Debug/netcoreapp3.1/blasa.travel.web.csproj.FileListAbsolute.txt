@@ -60,12 +60,14 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\n
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.Core.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Tools.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.pdb
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Tools.pdb
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.csprojAssemblyReference.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.AssemblyInfoInputs.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.AssemblyInfo.cs
@@ -79,5 +81,3 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\n
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.pdb
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.genruntimeconfig.cache
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.pdb

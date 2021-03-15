@@ -7,14 +7,15 @@ namespace blasa.travel.web.Models
 {
     public class TravelModel
     {
+        public int Id{ get; set; }
         public string DepartureCity { get; set; }
 
         public string ArrivalCity { get; set; }
-        public DateTime DateOfDeparture { get; set; }
+        public DateTime DepartureDate { get; set; }
 
         //we can use also TimeSpan as type for DepartureTime
         public DateTime DepartureTime { get; set; }
-        public int NumberOfPlaces { get; set; }
+        public int NumberPlaces { get; set; }
         public bool IsAutomaticAcceptance { get; set; }
         public decimal Price { get; set; }
         public string PhoneNumber { get; set; }

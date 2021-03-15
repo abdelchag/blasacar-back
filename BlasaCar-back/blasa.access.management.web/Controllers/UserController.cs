@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using System.Linq;
 using AutoMapper;
 using blasa.access.management.web.Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace blasa.access.management.web.Controllers
 {
@@ -97,8 +98,8 @@ namespace blasa.access.management.web.Controllers
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
+                //issuer: _configuration["JWT:ValidIssuer"],
+                //audience: _configuration["JWT:ValidAudience"],
                 expires: DateTime.Now.AddHours(3),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
@@ -119,7 +120,7 @@ namespace blasa.access.management.web.Controllers
         /// </summary>   
         /// <returns>A newly created BlasaCar account</returns>
         /// <response code="200">Success : returns the newly created BlasaCar account</response>
- 
+        [Authorize]
         [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
         [Produces("application/json")]

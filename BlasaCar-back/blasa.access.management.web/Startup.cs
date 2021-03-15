@@ -64,27 +64,69 @@ namespace blasa.access.management.web
 
 
             #region Swagger
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.IncludeXmlComments(string.Format(@"{0}\blasa-access-management.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+            //    c.SwaggerDoc("v1", new OpenApiInfo
+            //    {
+            //        Version = "v1",
+            //        Title = "blasa-access-management",
+            //    });
+
+            //});
+
             services.AddSwaggerGen(c =>
             {
-                c.IncludeXmlComments(string.Format(@"{0}\blasa-access-management.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+               
+                 c.IncludeXmlComments(string.Format(@"{0}\blasa-access-management.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "blasa-access-management",
                 });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+      {
+        {
+          new OpenApiSecurityScheme
+          {
+            Reference = new OpenApiReference
+              {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+              },
+              Scheme = "oauth2",
+              Name = "Bearer",
+              In = ParameterLocation.Header,
+
+            },
+            new List<string>()
+          }
+        });
 
             });
             #endregion
 
             #region DBcontext
-          
+
             //services.AddDbContext<ApplicationContext>(options =>
             //    options.UseSqlServer(
             //        Configuration.GetConnectionString("DefaultConnection"),
             //        b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
             #endregion
 
-            
+
 
             #region API Versioning
             // Add API Versioning to the Project
@@ -124,6 +166,7 @@ namespace blasa.access.management.web
               .AddDefaultTokenProviders();
 
             // Adding Authentication  
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -131,7 +174,7 @@ namespace blasa.access.management.web
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
 
-            // Adding Jwt Bearer  
+             //Adding Jwt Bearer old
             .AddJwtBearer(options =>
             {
                 options.SaveToken = true;
@@ -145,6 +188,30 @@ namespace blasa.access.management.web
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                 };
             });
+
+            ////Adding Athentication - JWT
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //})
+
+            //    .AddJwtBearer(o =>
+            //    {
+            //        o.RequireHttpsMetadata = false;
+            //        o.SaveToken = false;
+            //        o.TokenValidationParameters = new TokenValidationParameters
+            //        {
+            //            ValidateIssuerSigningKey = true,
+            //            ValidateIssuer = true,
+            //            ValidateAudience = true,
+            //            ValidateLifetime = true,
+            //            ClockSkew = TimeSpan.Zero,
+            //            ValidIssuer = Configuration["JWT:Issuer"],
+            //            ValidAudience = Configuration["JWT:Audience"],
+            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Key"]))
+            //        };
+            //    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

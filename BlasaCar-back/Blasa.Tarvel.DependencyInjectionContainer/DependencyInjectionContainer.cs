@@ -42,6 +42,15 @@ namespace blasa.tarvel.DependencyInjectionContainer
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
+           
+            services.AddScoped<IGenericRepositoryAsync<Travel>, GenericRepositoryAsync<Travel>>();
+
+
+        }
+        public static void RegisterServicesTest(IServiceCollection services )
+        {
+             
+            services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
             services.AddScoped<IGenericRepositoryAsync<Travel>, GenericRepositoryAsync<Travel>>();
 
 

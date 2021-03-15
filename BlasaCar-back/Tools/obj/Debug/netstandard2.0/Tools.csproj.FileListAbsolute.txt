@@ -1,6 +1,7 @@
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\bin\Debug\netstandard2.0\Tools.deps.json
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\bin\Debug\netstandard2.0\Tools.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\bin\Debug\netstandard2.0\Tools.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\obj\Debug\netstandard2.0\Tools.csprojAssemblyReference.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\obj\Debug\netstandard2.0\Tools.AssemblyInfoInputs.cache
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\obj\Debug\netstandard2.0\Tools.AssemblyInfo.cs
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\Tools\obj\Debug\netstandard2.0\Tools.csproj.CoreCompileInputs.cache

@@ -25,9 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.hosting", "blasa.hosting\blasa.hosting.csproj", "{46448CC7-1934-4831-8162-02FEEE348908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blasa.tarvel.DependencyInjectionContainer", "Blasa.Tarvel.DependencyInjectionContainer\blasa.tarvel.DependencyInjectionContainer.csproj", "{EACE8DDE-E87D-49EB-8FD8-758706BFFD38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.tarvel.DependencyInjectionContainer", "Blasa.Tarvel.DependencyInjectionContainer\blasa.tarvel.DependencyInjectionContainer.csproj", "{EACE8DDE-E87D-49EB-8FD8-758706BFFD38}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blasa.hosting", "blasa.hosting", "{995F61CA-788D-4307-AC99-A12EEE02B8C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blasa.travel.test", "blasa.travel.test", "{A99C5D5B-EB00-458B-8446-D4D4B0DED0A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blasa.travel.web.Tests", "blasa.travel.web.Tests\blasa.travel.web.Tests.csproj", "{56C37AA5-03DB-4161-AA08-8F41F35190CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,10 @@ Global
 		{EACE8DDE-E87D-49EB-8FD8-758706BFFD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EACE8DDE-E87D-49EB-8FD8-758706BFFD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EACE8DDE-E87D-49EB-8FD8-758706BFFD38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C37AA5-03DB-4161-AA08-8F41F35190CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C37AA5-03DB-4161-AA08-8F41F35190CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C37AA5-03DB-4161-AA08-8F41F35190CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C37AA5-03DB-4161-AA08-8F41F35190CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,8 @@ Global
 		{897BDC16-04F9-4EAF-BB1B-CBC4C12C7D5B} = {4BE0359C-C160-405E-A172-D40BC187B756}
 		{46448CC7-1934-4831-8162-02FEEE348908} = {995F61CA-788D-4307-AC99-A12EEE02B8C3}
 		{EACE8DDE-E87D-49EB-8FD8-758706BFFD38} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
+		{A99C5D5B-EB00-458B-8446-D4D4B0DED0A0} = {8EED0FC5-561B-420A-A112-BDC8EF769567}
+		{56C37AA5-03DB-4161-AA08-8F41F35190CE} = {A99C5D5B-EB00-458B-8446-D4D4B0DED0A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6D67E21-45A6-4FDF-915F-8BC258DD74C0}
