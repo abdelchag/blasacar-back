@@ -15,8 +15,8 @@ namespace blasa.access.management.Core.Application.Features.Users.Queries.GetUse
         public int Id { get; set; }
         public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, User>
         {
-            private readonly IApplicationDbContext _context;
-            public GetUserByIdQueryHandler(IApplicationDbContext context)
+            private readonly IAuthentificationDbContext _context;
+            public GetUserByIdQueryHandler(IAuthentificationDbContext context)
             {
                 _context = context;
             }

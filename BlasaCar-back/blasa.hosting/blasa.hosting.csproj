@@ -1,11 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blasa.Tarvel.DependencyInjectionContainer\blasa.tarvel.DependencyInjectionContainer.csproj" />
+    <PackageReference Include="Unity" Version="5.11.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\blasa.access.management.persistance\blasa.access.management.persistance.csproj" />
+    <ProjectReference Include="..\blasa.travel.core\blasa.travel.Core.csproj" />
+    <ProjectReference Include="..\blasa.travel.persistance\blasa.travel.persistance.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,9 +13,9 @@ namespace blasa.travel.persistance.Repositories
 {
     public class TravelRepositoryAsync : IGenericRepositoryAsync<Travel>  
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly TravelDbContext _dbContext;
 
-        public TravelRepositoryAsync(ApplicationDbContext dbContext)
+        public TravelRepositoryAsync(TravelDbContext dbContext)
         {
             _dbContext = dbContext;
         }

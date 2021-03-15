@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2HHFgIrPnEBSNGenEc4spzn/AwVoaZSEJv3af+YymtnRP+Xq+J1s1xaQeeQL6nri2HYEtnQ6DCAahvk6yoH2Cw==",
+  "dgSpecHash": "ewhscPI/9QElme7ElUzmOj1CrvUbfMHBpK1WoPA6qhaolz7CuK8wSG8srm643mOD+PFSALArAo2rAKmCFcMUYw==",
   "success": true,
   "projectFilePath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\blasa.access.management.web.csproj",
   "expectedPackageFiles": [
@@ -74,7 +74,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\abarrima\\.nuget\\packages\\sendgrid\\9.21.1\\sendgrid.9.21.1.nupkg.sha512",
+    "C:\\Users\\abarrima\\.nuget\\packages\\sendgrid\\9.22.0\\sendgrid.9.22.0.nupkg.sha512",
     "C:\\Users\\abarrima\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512",
     "C:\\Users\\abarrima\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\abarrima\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
@@ -146,7 +146,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\abarrima\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
   ],
   "logs": []
 }

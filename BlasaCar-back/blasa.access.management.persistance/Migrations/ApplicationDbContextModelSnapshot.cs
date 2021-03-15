@@ -8,8 +8,8 @@ using blasa.access.management.persistance.Contexts;
 
 namespace blasa.access.management.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(AuthentificationDbContext))]
+    partial class AuthentificationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

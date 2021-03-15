@@ -9,7 +9,7 @@ using blasa.access.management.persistance.Contexts;
 
 namespace blasa.access.management.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(AuthentificationDbContext))]
     [Migration("20201126205629_change_sex_to_gender")]
     partial class change_sex_to_gender
     {

@@ -9,7 +9,7 @@ using blasa.access.management.persistance.Contexts;
 
 namespace blasa.access.management.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(AuthentificationDbContext))]
     [Migration("20201119215732_MyFirstMigration")]
     partial class MyFirstMigration
     {

@@ -8,8 +8,8 @@ using blasa.travel.persistance.Contexts;
 
 namespace blasa.travel.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(TravelDbContext))]
+    partial class TravelDbContextContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

@@ -9,9 +9,9 @@ namespace blasa.access.management.persistance.Repositories
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly AuthentificationDbContext _dbContext;
 
-        public GenericRepositoryAsync(ApplicationDbContext dbContext)
+        public GenericRepositoryAsync(AuthentificationDbContext dbContext)
         {
             _dbContext = dbContext;
         }

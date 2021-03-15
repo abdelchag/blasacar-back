@@ -10,9 +10,9 @@ namespace blasa.travel.persistance.Repositories
     //Adopter of OutputPort
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly TravelDbContext _dbContext;
 
-        public GenericRepositoryAsync(ApplicationDbContext dbContext)
+        public GenericRepositoryAsync(TravelDbContext dbContext)
         {
             _dbContext = dbContext;
         }

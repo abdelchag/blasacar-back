@@ -10,3 +10,15 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.csproj.CopyComplete
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.dll
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.persistance.deps.json
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.persistance.dll
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.Core.dll
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.csprojAssemblyReference.cache
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.AssemblyInfoInputs.cache
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.AssemblyInfo.cs
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.csproj.CoreCompileInputs.cache
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.csproj.CopyComplete
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.dll
+C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.persistance\obj\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
