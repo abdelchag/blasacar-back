@@ -336,3 +336,14 @@ C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Deb
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.hosting.pdb
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.hosting.exe
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Unity.Abstractions.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Unity.Container.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.hosting.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.travel.Core.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Tools.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.hosting.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\Tools.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.access.management.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.pdb

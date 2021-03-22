@@ -9,7 +9,7 @@ using blasa.travel.persistance.Contexts;
 
 namespace blasa.travel.persistance.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(TravelDbContext))]
     [Migration("20210308203241_change_table_travel")]
     partial class change_table_travel
     {

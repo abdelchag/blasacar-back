@@ -56,7 +56,7 @@ namespace blasa.travel.web.Middleware
                     stackTrace = exception.StackTrace;
             }
 
-            var result = JsonSerializer.Serialize(new { error = message, stackTrace });
+            var result = JsonSerializer.Serialize(new Error { message = message});
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)status;
             return context.Response.WriteAsync(result);

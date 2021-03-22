@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-<<<<<<< HEAD
+ 
 using blasa.travel.web.Filtre;
-=======
+ 
 using blasa.hosting;
 using blasa.tarvel.DependencyInjectionContainer;
->>>>>>> 404cdd147eaae00f9ab9fe391ad3f16ff8815f98
+ 
 using blasa.travel.Core.Application.Commands;
 using blasa.travel.Core.Application.Repositories;
 using blasa.travel.Core.Domain.Entities;

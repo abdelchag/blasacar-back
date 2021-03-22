@@ -83,8 +83,6 @@ D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\n
 D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\obj\Debug\netcoreapp3.1\blasa.travel.web.genruntimeconfig.cache
 <<<<<<< HEAD
 =======
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.tarvel.DependencyInjectionContainer.pdb
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -183,3 +181,19 @@ C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcorea
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.dll
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.travel.persistance.pdb
 >>>>>>> 404cdd147eaae00f9ab9fe391ad3f16ff8815f98
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.hosting.exe
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\MediatR.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Unity.Abstractions.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\Unity.Container.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.access.management.Core.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.access.management.persistance.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.hosting.dll
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.hosting.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.access.management.Core.pdb
+D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.web\bin\Debug\netcoreapp3.1\blasa.access.management.persistance.pdb

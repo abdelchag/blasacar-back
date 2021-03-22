@@ -33,8 +33,8 @@ namespace blasa.travel.web.Tests
                       //IHostingEnvironment env = builderContext.HostingEnvironment;
                       //config.AddJsonFile("autofac.json")
                       //.AddEnvironmentVariables();
-                  })
-                  .ConfigureServices(services => DependencyInjectionContainer.RegisterServicesTest(services));
+                  });
+                 // .ConfigureServices(services => DependencyInjectionContainer.RegisterServicesTest(services));
 
             server = new TestServer(webHostBuilder);
             client = server.CreateClient();

@@ -14,6 +14,7 @@ namespace Tools.Constants
         public const string BlasacarExistingAccount = "BLASACAR_EXISTING_ACCOUNT";
         public const string BlasacarUserCreationFailedPasswordToShort = "BLASACAR_USER_CREATION_FAILED_PASSWORD_TO_SHORT";
         public const string BlasacarUserCreationFailed = "BLASACAR_USER_CREATION_FAILED";
+        public const string BLASACARTravelfailedCreation     = "BLASACAR_Travel_failed_Creation";
 
 
         

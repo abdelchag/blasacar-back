@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using blasa.travel.web.Wrapper;
 using blasa.travel.web.Exceptions;
+using Tools.Constants;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace blasa.travel.web.Controllers
@@ -48,8 +49,8 @@ namespace blasa.travel.web.Controllers
             if (newTravelResult is null)
             {
 
-                  throw new BadRequestException("BLASACAR_Travel_failed_Creation");
-                }
+                  throw new BadRequestException(ErrorConstants.BLASACARTravelfailedCreation);
+            }
 
             return Ok( newTravelResult);
             

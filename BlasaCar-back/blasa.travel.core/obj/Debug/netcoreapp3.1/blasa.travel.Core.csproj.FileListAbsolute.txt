@@ -1,12 +1,3 @@
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.deps.json
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.AssemblyInfoInputs.cache
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.AssemblyInfo.cs
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.csproj.CoreCompileInputs.cache
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.dll
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.pdb
-D:\Bureau\Blasacar-back\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.csprojAssemblyReference.cache
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.deps.json
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.dll
 C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
