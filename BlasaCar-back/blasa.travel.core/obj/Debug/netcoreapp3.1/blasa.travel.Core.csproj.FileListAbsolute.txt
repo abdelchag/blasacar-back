@@ -1,8 +1,0 @@
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.deps.json
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.dll
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\bin\Debug\netcoreapp3.1\blasa.travel.Core.pdb
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.AssemblyInfoInputs.cache
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.AssemblyInfo.cs
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.csproj.CoreCompileInputs.cache
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.dll
-C:\Work\blasacar\blasacar-back\BlasaCar-back\blasa.travel.core\obj\Debug\netcoreapp3.1\blasa.travel.Core.pdb
