@@ -9,7 +9,7 @@ namespace blasa.access.management.web.Models
     public class Error
     {
          
-        public String code  { get; set; }
-        public String message { get; set; }
+        //public String code  { get; set; }
+        public string message { get; set; }
     }
 }

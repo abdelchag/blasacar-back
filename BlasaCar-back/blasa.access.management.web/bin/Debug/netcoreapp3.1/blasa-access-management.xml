@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>blasa.access.management.web</name>
+    </assembly>
+    <members>
+        <member name="M:blasa.access.management.web.Controllers.ExternalUserController.Register(blasa.access.management.web.Models.RegisterModelExternal)">
+            <summary>
+            Create a new BlasaCar account from Facebook.
+            </summary>   
+            <returns>A newly created BlasaCar account</returns>
+            <response code="200">Success : returns the newly created BlasaCar account</response>
+        </member>
+        <member name="M:blasa.access.management.web.Controllers.ExternalUserController.login(blasa.access.management.web.Models.LoginModelExternal)">
+            <summary>
+            Login a BlasaCar account from Facebook.
+            </summary>   
+            <returns>login a BlasaCar account from Facebook</returns>
+            <response code="200">Success : return the BlasaCar account</response>
+        </member>
+        <member name="M:blasa.access.management.web.Controllers.UserController.Login(blasa.access.management.web.Models.LoginModel)">
+            <summary>
+            Login a BlasaCar account.
+            </summary>   
+            <returns>login a BlasaCar account</returns>
+            <response code="200">Success : return the BlasaCar account</response>
+        </member>
+        <member name="M:blasa.access.management.web.Controllers.UserController.Register(blasa.access.management.web.Models.RegisterModel)">
+            <summary>
+            Create a new BlasaCar account.
+            </summary>   
+            <returns>A newly created BlasaCar account</returns>
+            <response code="200">Success : returns the newly created BlasaCar account</response>
+        </member>
+    </members>
+</doc>

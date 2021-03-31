@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+ 
+using blasa.travel.web.Filtre;
+ 
 using blasa.hosting;
 using blasa.tarvel.DependencyInjectionContainer;
+ 
 using blasa.travel.Core.Application.Commands;
 using blasa.travel.Core.Application.Repositories;
 using blasa.travel.Core.Domain.Entities;
@@ -23,6 +27,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Tools.Email;
+using blasa.travel.web.Middleware;
 
 namespace blasa.travel.web
 {
@@ -39,14 +44,19 @@ namespace blasa.travel.web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            //services.AddMvc(options =>
+            //{
+            //    options.Filters.Add(typeof(DomainExceptionFilter));
+            //    options.Filters.Add(typeof(ValidateModelAttribute));
+            //});
 
             #region Services application
 
             //services.Add(new ServiceDescriptor(typeof(IResponse<User>), new Response<User>()));
             //services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync), new Token()));
             //services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync<Travel>), new GenericCommandAsync<Travel>(GenericRepositoryAsync<Travel>)));
-            services.AddTransient<IEmailSender, Models.EmailSender>();
+            services.AddTransient<IEmailSender, Models.EmailSender>(); 
+            
             //dependency  injection of Infrastructure
             //services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
             AddPersistence(services, Configuration);
@@ -67,35 +77,79 @@ namespace blasa.travel.web
 
             services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
+
             #endregion
 
 
             #region Swagger
-            services.AddSwaggerGen(c =>
-            {
-                c.IncludeXmlComments(string.Format(@"{0}\blasa-travel.xml", System.AppDomain.CurrentDomain.BaseDirectory));
-                c.SwaggerDoc("v1", new OpenApiInfo
+
+            //services.AddSwaggerGen(options =>
+            //{
+            //    services.AddSwaggerGen(c =>
+            //{
+            //    c.IncludeXmlComments(string.Format(@"{0}\blasa-travel.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+            //    c.SwaggerDoc("v1", new OpenApiInfo
+            //    {
+            //        Version = "v1",
+            //        Title = "blasa-travel",
+            //    });             
+            //});
+
+                services.AddSwaggerGen(c =>
                 {
-                    Version = "v1",
-                    Title = "blasa-travel",
+                    c.IncludeXmlComments(string.Format(@"{0}\blasa-travel.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+
+                    c.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Version = "v1",
+                        Title = "blasa-travel",
+                    });
+                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                    {
+                        Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer"
+                    });
+
+                    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+      {
+        {
+          new OpenApiSecurityScheme
+          {
+            Reference = new OpenApiReference
+              {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+              },
+              Scheme = "oauth2",
+              Name = "Bearer",
+              In = ParameterLocation.Header,
+
+            },
+            new List<string>()
+          }
+        });
+                    
                 });
+                #endregion
 
-            });
-            #endregion
+                #region DBcontext
 
-            #region DBcontext
-
-            //services.AddDbContext<ApplicationContext>(options =>
-            //    options.UseSqlServer(
-            //        Configuration.GetConnectionString("DefaultConnection"),
-            //        b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
-            #endregion
+                //services.AddDbContext<ApplicationContext>(options =>
+                //    options.UseSqlServer(
+                //        Configuration.GetConnectionString("DefaultConnection"),
+                //        b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+                #endregion
 
 
 
-            #region API Versioning
-            // Add API Versioning to the Project
-            services.AddApiVersioning(config =>
+                #region API Versioning
+                // Add API Versioning to the Project
+                services.AddApiVersioning(config =>
             {
                 // Specify the default API Version as 1.0
                 config.DefaultApiVersion = new ApiVersion(1, 0);
@@ -160,12 +214,18 @@ namespace blasa.travel.web
             {
                 app.UseDeveloperExceptionPage();
             }
-
+                         
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+             // Hook in the global error-handling middleware
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             app.UseAuthorization();
+
+           
+
+            // Register any middleware to report exceptions to a third-party service *after* our ErrorHandlingMiddleware
+            //app.UseExcepticon();
 
             app.UseEndpoints(endpoints =>
             {

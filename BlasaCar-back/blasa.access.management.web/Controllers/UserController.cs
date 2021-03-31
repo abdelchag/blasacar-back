@@ -15,7 +15,11 @@ using Microsoft.AspNetCore.WebUtilities;
 using System.Linq;
 using AutoMapper;
 using blasa.access.management.web.Dto;
+ 
+using Microsoft.AspNetCore.Authorization;
+ 
 using Tools.Constants;
+ 
 
 namespace blasa.access.management.web.Controllers
 {
@@ -61,7 +65,7 @@ namespace blasa.access.management.web.Controllers
         {
             var user = await userManager.FindByNameAsync(model.Email);
 
-            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = ErrorConstants.BlasacarLoginFailedUserNotExiste, message = "wrong login : this user does not exist in the database" });
+            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste });
             if ( await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
@@ -76,7 +80,7 @@ namespace blasa.access.management.web.Controllers
                 //});
             }
             //return Unauthorized();
-            return StatusCode(StatusCodes.Status401Unauthorized, new Error { code = ErrorConstants.BlasacarLoginFailedWrongPassword, message = "wrong login : the password is incorrect" });
+            return StatusCode(StatusCodes.Status401Unauthorized, new Error { message = ErrorConstants.BlasacarLoginFailedWrongPassword });
 
         }
 
@@ -98,8 +102,8 @@ namespace blasa.access.management.web.Controllers
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
+                //issuer: _configuration["JWT:ValidIssuer"],
+                //audience: _configuration["JWT:ValidAudience"],
                 expires: DateTime.Now.AddHours(3),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
@@ -120,7 +124,7 @@ namespace blasa.access.management.web.Controllers
         /// </summary>   
         /// <returns>A newly created BlasaCar account</returns>
         /// <response code="200">Success : returns the newly created BlasaCar account</response>
- 
+        [Authorize]
         [ProducesResponseType(typeof(Response<UserDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Error), StatusCodes.Status400BadRequest)]
         [Produces("application/json")]
@@ -130,7 +134,7 @@ namespace blasa.access.management.web.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = ErrorConstants.BlasacarExistingAccount, message = "wrong Register :this user exists in the database ! " });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { message = ErrorConstants.BlasacarExistingAccount  });
             
             User user = new User()
             {
@@ -151,7 +155,7 @@ namespace blasa.access.management.web.Controllers
             if (!result.Succeeded)
             { List<IdentityError> listErruer = result.Errors.ToList(); 
                 
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { code = ErrorConstants.BlasacarUserCreationFailedPasswordToShort,  message = "Passwords must be at least 8 characters." });
+                return StatusCode(StatusCodes.Status400BadRequest, new Error { message = ErrorConstants.BlasacarUserCreationFailedPasswordToShort  });
             }
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 

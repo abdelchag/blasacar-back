@@ -36,11 +36,11 @@ namespace blasa.travel.persistance.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DateOfDeparture")
-                        .HasColumnType("timestamp without time zone");
-
                     b.Property<string>("DepartureCity")
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("DepartureDate")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("DepartureTime")
                         .HasColumnType("timestamp without time zone");
@@ -54,7 +54,7 @@ namespace blasa.travel.persistance.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
-                    b.Property<int>("NumberOfPlaces")
+                    b.Property<int>("NumberPlaces")
                         .HasColumnType("integer");
 
                     b.Property<string>("PhoneNumber")

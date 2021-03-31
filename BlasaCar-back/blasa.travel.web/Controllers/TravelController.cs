@@ -8,11 +8,18 @@ using blasa.travel.web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using blasa.travel.web.Wrapper;
+using blasa.travel.web.Exceptions;
+using Tools.Constants;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace blasa.travel.web.Controllers
 {
-    [Route("api/[controller]")]
+    //[Authorize]
+    [Route("api/travel")]
+   
     [ApiController]
     //Adopter of InputPort
     public class TravelController : ControllerBase
@@ -25,26 +32,28 @@ namespace blasa.travel.web.Controllers
         {
             _TravelGenericServices = TravelGenericServices;
             _mapper = mapper;
+           // HttpContext.VerifyUserHasAnyAcceptedScope(scopeRequiredByApi);
         }
+         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 
-       
         // POST api/<TravelsController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]  TravelModel _travelModel)
+        public async Task<IActionResult> Post([FromBody]  TravelModel _travelDto    )
          
         {
-            var TravelEntity = _mapper.Map<Travel>(_travelModel);
+            //throw new Exception("test");
+            var TravelEntity = _mapper.Map<Travel>(_travelDto);
             //var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
             var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
 
             if (newTravelResult is null)
             {
-                 
-                    return BadRequest();
-                    //   return StatusCode(StatusCodes.Status400BadRequest); //, new Error { code = "BlasaCar_EXISTING_ACCOUNT", message = "wrong Register :this user exists in the database ! " });
-                }
 
-            return Ok(newTravelResult);
+                  throw new BadRequestException(ErrorConstants.BLASACARTravelfailedCreation);
+            }
+
+            return Ok( newTravelResult);
+            
 
         }
 
