@@ -7128,23 +7128,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\med\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\ABDELCHAG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\blasa.access.management.web.csproj",
+      "projectUniqueName": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\blasa.access.management.web.csproj",
       "projectName": "blasa.access.management.web",
-      "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\blasa.access.management.web.csproj",
-      "packagesPath": "C:\\Users\\med\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\obj\\",
+      "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\blasa.access.management.web.csproj",
+      "packagesPath": "C:\\Users\\ABDELCHAG\\.nuget\\packages\\",
+      "outputPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\med\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ABDELCHAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7156,18 +7152,19 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj": {
-              "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj"
+            "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj": {
+              "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj"
             },
-            "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj": {
-              "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj"
+            "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj": {
+              "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj"
             },
-            "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
-              "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj"
+            "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
+              "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj"
             },
-            "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj": {
-              "projectPath": "C:\\Work\\blasacar\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj"
+            "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj": {
+              "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj"
             }
           }
         }
@@ -7180,6 +7177,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
@@ -7238,7 +7236,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
