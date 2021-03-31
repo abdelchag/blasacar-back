@@ -20,6 +20,7 @@ namespace blasa.travel.persistance.Contexts
         }
 
 
+
         public DbSet<Travel> Travels { get; set; }
 
         public async Task<int> SaveChangesAsync()
