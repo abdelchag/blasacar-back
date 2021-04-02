@@ -15,6 +15,7 @@ namespace blasa.travel.web.Filtre
             if (!context.ModelState.IsValid)
             {
                 context.Result = new BadRequestObjectResult(context.ModelState);
+              
             }
         }
     }

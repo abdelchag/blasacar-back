@@ -5,13 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using blasa.travel.Core.Domain.Entities;
+using blasa.travel.Core.Application.OutputPort;
+using System;
 
-
-
- 
-namespace blasa.travel.persistance.Repositories
+namespace blasa.travel.persistance.RepositoriesAdapter
 {
-    public class TravelRepositoryAsync : IGenericRepositoryAsync<Travel>  
+    class TravelRepositoryAsync : ITravelRepositoryAsync
     {
         private readonly TravelDbContext _dbContext;
 
@@ -20,46 +19,14 @@ namespace blasa.travel.persistance.Repositories
             _dbContext = dbContext;
         }
 
-        public virtual async Task<Travel> GetByIdAsync(int id)
+        
+        public async Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id)
         {
-            return await _dbContext.Travels.FindAsync(id);
+
+            return await _dbContext.Travels.Where(t => t.Userid == id).ToListAsync();
+
         }
 
-        public async Task<IReadOnlyList<Travel>> GetPagedReponseAsync(int pageNumber, int pageSize)
-        {
-            return await _dbContext
-                .Travels
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .AsNoTracking()
-                .ToListAsync();
-        }
-
-        public async Task<Travel> AddAsync(Travel entity)
-        {
-            await _dbContext.Travels.AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
-            return entity;
-        }
-
-        public async Task UpdateAsync(Travel travel)
-        {
-          //  _dbContext.(entity).State = EntityState.Modified;
-            _dbContext.Entry(travel).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(Travel entity)
-        {
-            _dbContext.Travels.Remove(entity);
-            await _dbContext.SaveChangesAsync();
-        }
-
-        public async Task<IReadOnlyList<Travel>> GetAllAsync()
-        {
-            return await _dbContext
-                 .Travels
-                 .ToListAsync();
-        }
+       
     }
 }
