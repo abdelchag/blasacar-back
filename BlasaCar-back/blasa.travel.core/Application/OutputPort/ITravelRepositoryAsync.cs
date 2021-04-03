@@ -8,7 +8,7 @@ namespace blasa.travel.Core.Application.OutputPort
 {
    public interface ITravelRepositoryAsync
     {
-        Task<Travel> GetTravelByUserIdAsync(Guid id);
-        Task<Travel> GetTravelByUserEmailAsync(String UserEmail );
+        Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id);
+       
     }
 }

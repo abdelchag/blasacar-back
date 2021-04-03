@@ -28,6 +28,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Tools.Email;
 using blasa.travel.web.Middleware;
+using Microsoft.AspNetCore.Diagnostics;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace blasa.travel.web
 {
@@ -43,13 +46,13 @@ namespace blasa.travel.web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+          
             //services.AddMvc(options =>
             //{
-            //    options.Filters.Add(typeof(DomainExceptionFilter));
+            //  //  options.Filters.Add(typeof(DomainExceptionFilter));
             //    options.Filters.Add(typeof(ValidateModelAttribute));
             //});
-
+            services.AddControllers();
             #region Services application
 
             //services.Add(new ServiceDescriptor(typeof(IResponse<User>), new Response<User>()));
@@ -214,13 +217,26 @@ namespace blasa.travel.web
             {
                 app.UseDeveloperExceptionPage();
             }
-                         
+            // It should be one of your very first registrations
+            //app.UseExceptionHandler("/error"); // Add this
+            // Hook in the global error-handling middleware
+            //app.UseMiddleware(typeof(ErrorHandlingMiddleware));  
+
+            //app.UseExceptionHandler(a => a.Run(async context =>
+            //{
+            //    var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+            //    var exception = exceptionHandlerPathFeature.Error;
+
+            //    var result = JsonConvert.SerializeObject(new { error = exception.Message });
+            //    context.Response.ContentType = "application/json";
+            //    await context.Response.WriteAsync(result);
+            //}));
             app.UseHttpsRedirection();
 
             app.UseRouting();
-             // Hook in the global error-handling middleware
-            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             app.UseAuthorization();
+
+           
 
            
 

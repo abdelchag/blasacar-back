@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\blasaCar.access.management.Core\blasa.access.management.Core.csproj" />
+  </ItemGroup>
+
 </Project>

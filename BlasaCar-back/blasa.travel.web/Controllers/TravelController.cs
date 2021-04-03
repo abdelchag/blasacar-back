@@ -114,9 +114,9 @@ namespace blasa.travel.web.Controllers
         }
 
         //[HttpGet("{pageNumber, pageSize}")]
-        //public async Task<IActionResult> GetPagedReponseAsync(int pageNumber, int pageSize)
+        //public async Task<IActionResult> GetPagedReponseAsync([FromQuery]  int pageNumber, int pageSize)
         //{
-        //    var ListTravelResult = await _TravelGenericServices.GetPagedReponseAsync(pageNumber  , pageSize);
+        //    var ListTravelResult = await _TravelGenericServices.GetPagedReponseAsync(pageNumber, pageSize);
 
         //    if (ListTravelResult is null)
         //    {

@@ -68,6 +68,7 @@ namespace blasa.access.management.web.Controllers
             var authClaims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.Email),
+                    new Claim("userId", user.Id),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
 
