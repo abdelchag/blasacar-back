@@ -19,7 +19,6 @@ namespace blasa.travel.Core.Domain.Entities
         public bool IsAutomaticAcceptance { get; set; }
         public decimal Price { get; set; }
         public string PhoneNumber { get; set; }
-
-    
+        public string UserID { get; set; }
     }
 }
