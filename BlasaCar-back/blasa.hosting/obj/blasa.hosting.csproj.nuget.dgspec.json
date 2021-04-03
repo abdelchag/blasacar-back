@@ -194,7 +194,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
+                "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
