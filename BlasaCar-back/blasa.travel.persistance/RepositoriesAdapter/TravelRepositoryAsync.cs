@@ -8,9 +8,9 @@ using blasa.travel.Core.Domain.Entities;
 using blasa.travel.Core.Application.OutputPort;
 using System;
 
-namespace blasa.travel.persistance.RepositoriesAdapter
+namespace blasa.travel.persistance.Repositories 
 {
-    class TravelRepositoryAsync : ITravelRepositoryAsync
+   public  class TravelRepositoryAsync : ITravelRepositoryAsync
     {
         private readonly TravelDbContext _dbContext;
 
