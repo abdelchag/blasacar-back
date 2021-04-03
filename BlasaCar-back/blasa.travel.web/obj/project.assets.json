@@ -3943,12 +3943,11 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "KMVuoQ+8bMQ/Z59M3s64num5AD74X5YSqVc7ibwGkPTfmmkl2W8VuSxLRJtpw4KzQrSKUgR0BLbF0adPfcTSGQ==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3982,12 +3981,11 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7008,12 +7006,11 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7173,19 +7170,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ABDELCHAG\\.nuget\\packages\\": {}
+    "C:\\Users\\abarrima\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.web\\blasa.travel.web.csproj",
+      "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.web\\blasa.travel.web.csproj",
       "projectName": "blasa.travel.web",
-      "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.web\\blasa.travel.web.csproj",
-      "packagesPath": "C:\\Users\\ABDELCHAG\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.web\\obj\\",
+      "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.web\\blasa.travel.web.csproj",
+      "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
+      "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.web\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ABDELCHAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7197,13 +7198,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj": {
-              "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj"
+            "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj": {
+              "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.hosting\\blasa.hosting.csproj"
             },
-            "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj": {
-              "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj"
+            "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj": {
+              "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\Tools\\Tools.csproj"
             }
           }
         }
@@ -7216,7 +7216,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
@@ -7263,7 +7262,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

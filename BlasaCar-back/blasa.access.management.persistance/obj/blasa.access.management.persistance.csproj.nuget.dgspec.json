@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj": {}
+    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj": {}
   },
   "projects": {
-    "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj": {
+    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj",
+        "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj",
         "projectName": "blasa.access.management.persistance",
-        "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj",
-        "packagesPath": "C:\\Users\\ABDELCHAG\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\obj\\",
+        "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\blasa.access.management.persistance.csproj",
+        "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
+        "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.access.management.persistance\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ABDELCHAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,10 +29,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
-                "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj"
+              "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
+                "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj"
               }
             }
           }
@@ -42,7 +44,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
@@ -90,21 +91,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
+    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj",
+        "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj",
         "projectName": "blasa.access.management.Core",
-        "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj",
-        "packagesPath": "C:\\Users\\ABDELCHAG\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\obj\\",
+        "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\blasa.access.management.Core.csproj",
+        "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
+        "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasaCar.access.management.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ABDELCHAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,7 +120,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -128,7 +131,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -166,7 +168,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

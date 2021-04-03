@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {}
+    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {}
   },
   "projects": {
-    "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
+    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
+        "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
         "projectName": "blasa.travel.Core",
-        "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
-        "packagesPath": "C:\\Users\\ABDELCHAG\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\obj\\",
+        "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj",
+        "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
+        "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ABDELCHAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -60,21 +61,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {
+    "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
+        "projectUniqueName": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
         "projectName": "blasa.travel.persistance",
-        "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
-        "packagesPath": "C:\\Users\\ABDELCHAG\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\obj\\",
+        "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\blasa.travel.persistance.csproj",
+        "packagesPath": "C:\\Users\\abarrima\\.nuget\\packages\\",
+        "outputPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.persistance\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ABDELCHAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abarrima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,10 +90,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
-                "projectPath": "D:\\WorkSpace\\M2A\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj"
+              "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj": {
+                "projectPath": "D:\\Bureau\\Blasacar-back\\blasacar-back\\BlasaCar-back\\blasa.travel.core\\blasa.travel.Core.csproj"
               }
             }
           }
@@ -102,7 +105,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -132,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
