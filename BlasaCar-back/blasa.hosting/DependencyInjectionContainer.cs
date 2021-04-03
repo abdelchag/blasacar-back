@@ -1,13 +1,13 @@
 ﻿using blasa.access.management.persistance.Contexts;
 using blasa.travel.Core.Application.Commands;
+using blasa.travel.Core.Application.OutputPort;
 using blasa.travel.Core.Application.Repositories;
 using blasa.travel.Core.Domain.Entities;
 using blasa.travel.persistance.Contexts;
 using blasa.travel.persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.Extensions.DependencyInjection; 
 namespace blasa.tarvel.DependencyInjectionContainer
 {
     public static class DependencyInjectionContainer
@@ -33,6 +33,8 @@ namespace blasa.tarvel.DependencyInjectionContainer
 
             services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
             services.AddScoped<IGenericRepositoryAsync<Travel>, GenericRepositoryAsync<Travel>>();
+              services.AddScoped<IUserRepositoryAsync, UserRepositoryAsync>();
+            services.AddScoped<IUserCommandAsync, UserCommandAsync>();
         }
     }
 }

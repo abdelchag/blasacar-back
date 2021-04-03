@@ -58,10 +58,11 @@ namespace blasa.travel.web
             //services.Add(new ServiceDescriptor(typeof(IResponse<User>), new Response<User>()));
             //services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync), new Token()));
             //services.Add(new ServiceDescriptor(typeof(IGenericCommandAsync<Travel>), new GenericCommandAsync<Travel>(GenericRepositoryAsync<Travel>)));
-            services.AddTransient<IEmailSender, Models.EmailSender>(); 
-            
+            services.AddTransient<IEmailSender, Models.EmailSender>();
+
             //dependency  injection of Infrastructure
             //services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
+            //services.AddScoped<IUserCommandAsync, UserCommandAsync>();
             AddPersistence(services, Configuration);
 
 

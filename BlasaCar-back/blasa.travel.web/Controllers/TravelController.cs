@@ -49,15 +49,20 @@ namespace blasa.travel.web.Controllers
                 return BadRequest(ModelState);
                
             }
-
+            string userId = null;
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
-                var userId=identity.FindFirst("userId").Value;
+                  userId=identity.FindFirst("userId").Value;
 
             }
+            if (userId == null)
+            {
+                throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+            }
 
-            var TravelEntity = _mapper.Map<Travel>(_travelDto);           
+            var TravelEntity = _mapper.Map<Travel>(_travelDto);
+            TravelEntity.Userid = userId;
             var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
             if (newTravelResult is null)
             {

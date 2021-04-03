@@ -48,6 +48,11 @@ namespace blasa.travel.web.Middleware
                 message = exception.Message;
                 status = HttpStatusCode.NotFound;
             }
+           else if (exceptionType == typeof(NotAuthorizException))
+            {
+                message = exception.Message;
+                status = HttpStatusCode.Unauthorized;
+            }
             else
             {
                 status = HttpStatusCode.InternalServerError;

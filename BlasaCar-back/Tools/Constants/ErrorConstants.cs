@@ -16,6 +16,7 @@ namespace Tools.Constants
         public const string BlasacarUserCreationFailed = "BLASACAR_USER_CREATION_FAILED";
         public const string BLASACARTravelfailedCreation     = "BLASACAR_Travel_failed_Creation";
         public const string BLASACARTravelNotFoundException = "BLASACAR_Travel_NotFoundException";
+        public const string BLASACARUnauthorized = "BLASACAR_Unauthorized";
 
 
 
