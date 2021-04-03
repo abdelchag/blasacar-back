@@ -25,9 +25,9 @@ namespace blasa.travel.web.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserCommandAsync _UserCommandAsyncServices;
+        private readonly ITravelCommandAsync _UserCommandAsyncServices;
         private readonly IMapper _mapper;
-        public UserController(IUserCommandAsync UserCommandAsyncServices, IMapper mapper)
+        public UserController(ITravelCommandAsync UserCommandAsyncServices, IMapper mapper)
         {
             _UserCommandAsyncServices = UserCommandAsyncServices;
             _mapper = mapper;

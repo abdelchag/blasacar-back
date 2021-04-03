@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace blasa.travel.Core.Application.OutputPort
 {
-   public interface IUserRepositoryAsync
+   public interface ITravelRepositoryAsync
     {
         Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id);
        

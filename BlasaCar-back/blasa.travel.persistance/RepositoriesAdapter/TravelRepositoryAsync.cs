@@ -10,11 +10,11 @@ using System;
 
 namespace blasa.travel.persistance.Repositories 
 {
-   public  class UserRepositoryAsync : IUserRepositoryAsync
+   public  class TravelRepositoryAsync : ITravelRepositoryAsync
     {
         private readonly TravelDbContext _dbContext;
 
-        public UserRepositoryAsync(TravelDbContext dbContext)
+        public TravelRepositoryAsync(TravelDbContext dbContext)
         {
             _dbContext = dbContext;
         }

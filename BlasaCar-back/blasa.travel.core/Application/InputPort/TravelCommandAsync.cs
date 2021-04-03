@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace blasa.travel.Core.Application.Commands
 {
-    public class UserCommandAsync : IUserCommandAsync
+    public class TravelCommandAsync : ITravelCommandAsync
     {
-        IUserRepositoryAsync _TravelRepositoryAsync;
+        ITravelRepositoryAsync _TravelRepositoryAsync;
 
-        public UserCommandAsync(IUserRepositoryAsync TravelRepositoryAsync)
+        public TravelCommandAsync(ITravelRepositoryAsync TravelRepositoryAsync)
         {
             _TravelRepositoryAsync = TravelRepositoryAsync;
         }

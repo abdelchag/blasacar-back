@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace blasa.travel.Core.Application.Commands
 {
-    public interface IUserCommandAsync
+    public interface ITravelCommandAsync
     {       
         Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id);
     }
