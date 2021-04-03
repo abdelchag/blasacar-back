@@ -13,35 +13,33 @@ namespace blasa.travel.Core.Application.Commands
         }
         public async Task<T> AddAsync(T entity)
         {
-            var newObj = await _GenericRepositoryAsync.AddAsync(entity);
-
-
-            return newObj;
+            return await _GenericRepositoryAsync.AddAsync(entity);
+ 
         }
 
-        public Task DeleteAsync(T entity)
+        public async Task<T> DeleteAsync(int id )
         {
-            throw new System.NotImplementedException();
+              return await _GenericRepositoryAsync.DeleteAsync( id);
         }
 
-        public Task<IReadOnlyList<T>> GetAllAsync()
+        public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+           return await _GenericRepositoryAsync.GetAllAsync();
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            return await _GenericRepositoryAsync.GetByIdAsync(id);
         }
 
-        public Task<IReadOnlyList<T>> GetPagedReponseAsync(int pageNumber, int pageSize)
+        public async Task<IReadOnlyList<T>> GetPagedReponseAsync(int pageNumber, int pageSize)
         {
-            throw new System.NotImplementedException();
+            return await _GenericRepositoryAsync.GetPagedReponseAsync( pageNumber,  pageSize);
         }
 
-        public Task UpdateAsync(T entity)
+        public async Task<T>  UpdateAsync(T entity)
         {
-            throw new System.NotImplementedException();
+             return  await _GenericRepositoryAsync.UpdateAsync(entity);
         }
     }
 }

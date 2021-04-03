@@ -1,4 +1,5 @@
-﻿using blasa.travel.Core.Domain.Common;
+﻿using blasa.access.management.Core.Domain.Entities;
+using blasa.travel.Core.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,7 @@ namespace blasa.travel.Core.Domain.Entities
         public bool IsAutomaticAcceptance { get; set; }
         public decimal Price { get; set; }
         public string PhoneNumber { get; set; }
+        public string Userid         { get; set; }
 
-    
     }
 }
