@@ -34,7 +34,4 @@ namespace blasa.travel.persistance.Repositories
         }
 
         }
-
-       
-    }
 }

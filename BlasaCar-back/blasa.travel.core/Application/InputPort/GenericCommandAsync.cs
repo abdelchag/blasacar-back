@@ -22,6 +22,11 @@ namespace blasa.travel.Core.Application.Commands
               return await _GenericRepositoryAsync.DeleteAsync( id);
         }
 
+        public Task DeleteAsync(T entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public async Task<IReadOnlyList<T>> GetAllAsync()
         {
            return await _GenericRepositoryAsync.GetAllAsync();

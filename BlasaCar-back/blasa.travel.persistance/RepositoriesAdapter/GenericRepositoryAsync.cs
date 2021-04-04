@@ -60,5 +60,10 @@ namespace blasa.travel.persistance.Repositories
                  .Set<T>()
                  .ToListAsync();
         }
+
+        public Task DeleteAsync(T entity)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
