@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,10 +30,12 @@ namespace blasa.travel.web.Controllers
 
 
         private readonly IGenericCommandAsync<Travel> _TravelGenericServices;
+        private readonly ITravelCommandAsync _UserCommandAsyncServices;
         private readonly IMapper _mapper;
-        public TravelController(IGenericCommandAsync<Travel> TravelGenericServices, IMapper mapper)
+        public TravelController(IGenericCommandAsync<Travel> TravelGenericServices, ITravelCommandAsync UserCommandAsyncServices, IMapper mapper)
         {
             _TravelGenericServices = TravelGenericServices;
+            _UserCommandAsyncServices = UserCommandAsyncServices;
             _mapper = mapper;
            // HttpContext.VerifyUserHasAnyAcceptedScope(scopeRequiredByApi);
         }
@@ -95,13 +97,32 @@ namespace blasa.travel.web.Controllers
         }
 
         [HttpGet ]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync([FromQuery] bool onlyUser)
 
         {
-            var listTravelResult = await _TravelGenericServices.GetAllAsync();
+            var listTravelResult = await Task.FromResult<IReadOnlyList<Travel>>(Array.Empty<Travel>());
+
+            if (onlyUser)
+            {
+                // User
+                string userId = null;
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                if (identity != null)
+                {
+                    userId = identity.FindFirst("userId").Value;
+
+                }
+                if (userId == null) throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+                listTravelResult = await _UserCommandAsyncServices.GetTravelByUserIdAsync(userId);
+            }else
+            {
+                // All
+                listTravelResult = await _TravelGenericServices.GetAllAsync();
+            }
+
             if (listTravelResult is null)
             {
-                throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException);
+                listTravelResult = await Task.FromResult<IReadOnlyList<Travel>>(Array.Empty<Travel>());
             }
             return Ok(_mapper.Map<IReadOnlyList<TravelDTO>>(listTravelResult));
         }
