@@ -24,9 +24,9 @@ namespace blasa.travel.Core.Application.Commands
             throw new System.NotImplementedException();
         }
 
-        public Task<IReadOnlyList<T>> GetAllAsync()
+        public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            return await _GenericRepositoryAsync.GetAllAsync();
         }
 
         public Task<T> GetByIdAsync(int id)
@@ -39,9 +39,9 @@ namespace blasa.travel.Core.Application.Commands
             throw new System.NotImplementedException();
         }
 
-        public Task UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
-            throw new System.NotImplementedException();
+            return await _GenericRepositoryAsync.UpdateAsync(entity);
         }
     }
 }

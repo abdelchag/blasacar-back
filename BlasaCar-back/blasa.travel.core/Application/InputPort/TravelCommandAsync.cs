@@ -43,7 +43,7 @@ namespace blasa.travel.Core.Application.Commands
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(Travel entity)
+        public Task<Travel> UpdateAsync(Travel entity)
         {
             throw new NotImplementedException();
         }

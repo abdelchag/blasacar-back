@@ -42,11 +42,12 @@ namespace blasa.travel.persistance.Repositories
             return entity;
         }
 
-        public async Task UpdateAsync(Travel travel)
+        public async Task<Travel> UpdateAsync(Travel travel)
         {
           //  _dbContext.(entity).State = EntityState.Modified;
             _dbContext.Entry(travel).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
+            return travel;
         }
 
         public async Task DeleteAsync(Travel entity)
