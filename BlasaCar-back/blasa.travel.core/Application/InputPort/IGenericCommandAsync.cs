@@ -13,6 +13,7 @@ namespace blasa.travel.Core.Application.Commands
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(int id);
+        Task DeleteAsync(T entity);
         
     }
 }

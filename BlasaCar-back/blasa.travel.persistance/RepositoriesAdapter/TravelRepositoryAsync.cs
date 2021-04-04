@@ -19,11 +19,19 @@ namespace blasa.travel.persistance.Repositories
             _dbContext = dbContext;
         }
 
-        
+
         public async Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id)
         {
 
             return await _dbContext.Travels.Where(t => t.Userid == id).ToListAsync();
+        }
+        public async Task<Travel> UpdateAsync(Travel travel)
+        {
+          //  _dbContext.(entity).State = EntityState.Modified;
+            _dbContext.Entry(travel).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
+            return travel;
+        }
 
         }
 

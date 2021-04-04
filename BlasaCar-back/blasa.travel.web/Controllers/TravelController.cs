@@ -74,8 +74,38 @@ namespace blasa.travel.web.Controllers
             
 
         }
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        // POST api/<TravelsController>
+        [HttpGet]
+        [Route("getall")]
+        public async Task<IActionResult> GetAll()
 
-        
+        {
+            //throw new Exception("test");
+
+            //var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
+            var travels = await _TravelGenericServices.GetAllAsync();
+
+            if (travels is null)
+            {
+                throw new BadRequestException("BLASACAR_Travel_failed_Creation");
+            }
+            return Ok(travels);
+        }
+
+        //[HttpPut]
+        //public async Task<IActionResult> EditTravel([FromBody] TravelModel _travelDto)
+        //{
+        //    var TravelEntity = _mapper.Map<Travel>(_travelDto);
+        //    var travel = await _TravelGenericServices.UpdateAsync(TravelEntity);
+
+        //    if (travel is null)
+        //    {
+        //        throw new BadRequestException("BLASACAR_Travel_failed_Edition");
+        //    }
+        //    return Ok(travel);
+        //}
+       
 
 
         [HttpDelete]
