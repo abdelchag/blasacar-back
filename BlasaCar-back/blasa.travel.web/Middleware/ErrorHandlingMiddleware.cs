@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -48,7 +49,7 @@ namespace blasa.travel.web.Middleware
                 message = exception.Message;
                 status = HttpStatusCode.NotFound;
             }
-           else if (exceptionType == typeof(NotAuthorizException))
+            else if (exceptionType == typeof(NotAuthorizException))
             {
                 message = exception.Message;
                 status = HttpStatusCode.Unauthorized;
@@ -60,8 +61,9 @@ namespace blasa.travel.web.Middleware
                 if (env.IsEnvironment("Development"))
                     stackTrace = exception.StackTrace;
             }
-
-            var result = JsonSerializer.Serialize(new Error { message = message});
+            var listErrors = new List<Error>();
+            listErrors.Add(new Error { message = message });
+            var result = JsonSerializer.Serialize(listErrors);
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)status;
             return context.Response.WriteAsync(result);
