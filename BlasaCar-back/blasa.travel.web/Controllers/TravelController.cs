@@ -156,7 +156,18 @@ namespace blasa.travel.web.Controllers
         public async Task<IActionResult> UpdateAsync ([FromBody] TravelDTO _travelDto)
         {            
             var TravelEntity = _mapper.Map<Travel>(_travelDto);
-          
+
+            string userId = null;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+                userId = identity.FindFirst("userId").Value;
+
+            }
+            if (userId == null) throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+
+            TravelEntity.Userid = userId;
+
             var newTravelResult = await _TravelGenericServices.UpdateAsync(TravelEntity);
 
             if (newTravelResult is null)
