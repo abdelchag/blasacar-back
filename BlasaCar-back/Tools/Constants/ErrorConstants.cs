@@ -17,6 +17,16 @@ namespace Tools.Constants
         public const string BLASACARTravelfailedCreation     = "BLASACAR_Travel_failed_Creation";
         public const string BLASACARTravelNotFoundException = "BLASACAR_Travel_NotFoundException";
         public const string BLASACARUnauthorized = "BLASACAR_Unauthorized";
+        public const string  BLASACAR_Travel_PhoneNumber_is_required  = "BLASACAR_Travel_PhoneNumber_is_required";
+        public const string  BLASACAR_Travel_invalid_PhoneNumber  = "BLASACAR_Travel_invalid_PhoneNumber";
+        public const string BLASACAR_Travel_Price_is_required = "BLASACAR_Travel_Price_is_required";
+        public const string BLASACAR_Travel_IsAutomaticAcceptance_is_required = "BLASACAR_Travel_IsAutomaticAcceptance_is_required";
+        public const string BLASACAR_Travel_NumberPlaces_is_required = "BLASACAR_Travel_NumberPlaces_is_required";
+        public const string BLASACAR_Travel_DepartureTime_is_required = "BLASACAR_Travel_DepartureTime_is_required";
+        public const string BLASACAR_Travel_DepartureDate_is_required = "BLASACAR_Travel_DepartureDate_is_required";
+        public const string BLASACAR_Travel_ArrivalCity_is_required = "BLASACAR_Travel_ArrivalCity_is_required";
+        public const string BLASACAR_Travel_DepartureCity_is_required = "BLASACAR_Travel_DepartureCity_is_required";
+ 
 
 
 

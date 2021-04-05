@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
 using blasa.travel.Core.Application.Commands;
 using blasa.travel.Core.Domain.Entities;
+using blasa.travel.web.Exceptions;
+using blasa.travel.web.Filtre;
 using blasa.travel.web.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using blasa.travel.web.Wrapper;
-using blasa.travel.web.Exceptions;
 using Tools.Constants;
-using blasa.travel.web.Filtre;
-using System.Security.Claims;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace blasa.travel.web.Controllers
 {
 
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/travel")]
-   
+
     [ApiController]
     //Adopter of InputPort
     public class TravelController : ControllerBase
@@ -35,25 +32,26 @@ namespace blasa.travel.web.Controllers
         {
             _TravelGenericServices = TravelGenericServices;
             _mapper = mapper;
-           // HttpContext.VerifyUserHasAnyAcceptedScope(scopeRequiredByApi);
+            // HttpContext.VerifyUserHasAnyAcceptedScope(scopeRequiredByApi);
         }
 
 
         // POST api/<TravelsController>
         [ValidateModel]
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]  TravelDTO _travelDto    )
-         
+        public async Task<IActionResult> Post([FromBody] TravelDTO _travelDto)
+
         {
-            if (!ModelState.IsValid) {
+            if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
-               
+
             }
             string userId = null;
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
-                  userId=identity.FindFirst("userId").Value;
+                userId = identity.FindFirst("userId").Value;
 
             }
             if (userId == null)
@@ -67,23 +65,23 @@ namespace blasa.travel.web.Controllers
             if (newTravelResult is null)
             {
 
-                  throw new BadRequestException(ErrorConstants.BLASACARTravelfailedCreation);
+                throw new BadRequestException(ErrorConstants.BLASACARTravelfailedCreation);
             }
 
-            return Ok( newTravelResult);
-            
+            return Ok(newTravelResult);
+
 
         }
 
-        
+
 
 
         [HttpDelete]
         public async Task<IActionResult> DeleteAsync(int id)
         {
-            
 
-            var  TravelResult = await _TravelGenericServices.DeleteAsync(id);
+
+            var TravelResult = await _TravelGenericServices.DeleteAsync(id);
 
             if (TravelResult is null)
             {
@@ -94,7 +92,7 @@ namespace blasa.travel.web.Controllers
             return Ok(_mapper.Map<TravelDTO>(TravelResult));
         }
 
-        [HttpGet ]
+        [HttpGet]
         public async Task<IActionResult> GetAllAsync()
 
         {
@@ -108,13 +106,13 @@ namespace blasa.travel.web.Controllers
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
-        {          
-           var  TravelResult = await _TravelGenericServices.GetByIdAsync(id);
-            if ( TravelResult is null)
+        {
+            var TravelResult = await _TravelGenericServices.GetByIdAsync(id);
+            if (TravelResult is null)
             {
                 throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException);
             }
-            
+
             return Ok(_mapper.Map<TravelDTO>(TravelResult));
         }
 
@@ -131,16 +129,16 @@ namespace blasa.travel.web.Controllers
 
         //    return Ok(_mapper.Map<TravelDTO>(ListTravelResult));
         //}
-        [HttpPut]       
-        public async Task<IActionResult> UpdateAsync ([FromBody] TravelDTO _travelDto)
-        {            
+        [HttpPut]
+        public async Task<IActionResult> UpdateAsync([FromBody] TravelDTO _travelDto)
+        {
             var TravelEntity = _mapper.Map<Travel>(_travelDto);
-          
+
             var newTravelResult = await _TravelGenericServices.UpdateAsync(TravelEntity);
 
             if (newTravelResult is null)
             {
-                  throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException); ;
+                throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException); ;
             }
 
             return Ok(_mapper.Map<TravelDTO>(newTravelResult));
