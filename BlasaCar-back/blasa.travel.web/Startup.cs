@@ -1,41 +1,31 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
- 
-using blasa.travel.web.Filtre;
- 
-using blasa.hosting;
 using blasa.tarvel.DependencyInjectionContainer;
- 
-using blasa.travel.Core.Application.Commands;
-using blasa.travel.Core.Application.Repositories;
-using blasa.travel.Core.Domain.Entities;
 //using blasa.tarvel.DependencyInjectionContainer;
 using blasa.travel.web.Mapping;
+using blasa.travel.web.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Tools.Email;
-using blasa.travel.web.Middleware;
-using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
+using Tools.Email;
 
 namespace blasa.travel.web
 {
     public class Startup
     {
+        private string message;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,13 +36,26 @@ namespace blasa.travel.web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-          
+
             //services.AddMvc(options =>
             //{
             //  //  options.Filters.Add(typeof(DomainExceptionFilter));
             //    options.Filters.Add(typeof(ValidateModelAttribute));
             //});
-            services.AddControllers();
+            services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.InvalidModelStateResponseFactory = context =>
+        {
+            var allErrors = context.ModelState.Values.SelectMany(
+                v => v.Errors.Select(b => new Error { message = b.ErrorMessage }))
+                             .ToList<Error>();
+            var result = new BadRequestObjectResult(allErrors);
+            result.ContentTypes.Add(MediaTypeNames.Application.Json);
+            return result;
+        };
+        
+    });
             #region Services application
 
             //services.Add(new ServiceDescriptor(typeof(IResponse<User>), new Response<User>()));
@@ -99,28 +102,28 @@ namespace blasa.travel.web
             //    });             
             //});
 
-                services.AddSwaggerGen(c =>
-                {
-                    c.IncludeXmlComments(string.Format(@"{0}\blasa-travel.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+            services.AddSwaggerGen(c =>
+            {
+                c.IncludeXmlComments(string.Format(@"{0}\blasa-travel.xml", System.AppDomain.CurrentDomain.BaseDirectory));
 
-                    c.SwaggerDoc("v1", new OpenApiInfo
-                    {
-                        Version = "v1",
-                        Title = "blasa-travel",
-                    });
-                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                    {
-                        Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "blasa-travel",
+                });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
                       Enter 'Bearer' [space] and then your token in the text input below.
                       \r\n\r\nExample: 'Bearer 12345abcdef'",
-                        Name = "Authorization",
-                        In = ParameterLocation.Header,
-                        Type = SecuritySchemeType.ApiKey,
-                        Scheme = "Bearer"
-                    });
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
 
-                    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-      {
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+  {
         {
           new OpenApiSecurityScheme
           {
@@ -136,35 +139,35 @@ namespace blasa.travel.web
             },
             new List<string>()
           }
-        });
-                    
-                });
-                #endregion
+    });
 
-                #region DBcontext
-
-                //services.AddDbContext<ApplicationContext>(options =>
-                //    options.UseSqlServer(
-                //        Configuration.GetConnectionString("DefaultConnection"),
-                //        b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
-                #endregion
-
-
-
-                #region API Versioning
-                // Add API Versioning to the Project
-                services.AddApiVersioning(config =>
-            {
-                // Specify the default API Version as 1.0
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                // If the client hasn't specified the API version in the request, use the default API version number 
-                config.AssumeDefaultVersionWhenUnspecified = true;
-                // Advertise the API versions supported for the particular endpoint
-                config.ReportApiVersions = true;
             });
             #endregion
 
-          
+            #region DBcontext
+
+            //services.AddDbContext<ApplicationContext>(options =>
+            //    options.UseSqlServer(
+            //        Configuration.GetConnectionString("DefaultConnection"),
+            //        b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+            #endregion
+
+
+
+            #region API Versioning
+            // Add API Versioning to the Project
+            services.AddApiVersioning(config =>
+        {
+            // Specify the default API Version as 1.0
+            config.DefaultApiVersion = new ApiVersion(1, 0);
+            // If the client hasn't specified the API version in the request, use the default API version number 
+            config.AssumeDefaultVersionWhenUnspecified = true;
+            // Advertise the API versions supported for the particular endpoint
+            config.ReportApiVersions = true;
+        });
+            #endregion
+
+
             ////dependency  injection of Application layer
             //services.AddApplication();
             // For Identity  
@@ -214,14 +217,13 @@ namespace blasa.travel.web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
             // It should be one of your very first registrations
             //app.UseExceptionHandler("/error"); // Add this
             // Hook in the global error-handling middleware
-            //app.UseMiddleware(typeof(ErrorHandlingMiddleware));  
 
             //app.UseExceptionHandler(a => a.Run(async context =>
             //{
@@ -232,34 +234,24 @@ namespace blasa.travel.web
             //    context.Response.ContentType = "application/json";
             //    await context.Response.WriteAsync(result);
             //}));
+          
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(x => x
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader());
+            app.UseAuthentication();
             app.UseAuthorization();
 
-           
 
-           
+
 
             // Register any middleware to report exceptions to a third-party service *after* our ErrorHandlingMiddleware
             //app.UseExcepticon();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-
-
-            app.UseCors(x => x
-           .AllowAnyOrigin()
-           .AllowAnyMethod()
-           .AllowAnyHeader());
-
-            
-
-
-            app.UseAuthentication();
-            
 
             app.UseEndpoints(endpoints =>
             {
@@ -285,4 +277,4 @@ namespace blasa.travel.web
             DependencyInjectionContainer.RegisterServices(services, configuration);
         }
     }
-} 
+}
