@@ -80,7 +80,7 @@ namespace blasa.travel.web.Controllers
         
 
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             
