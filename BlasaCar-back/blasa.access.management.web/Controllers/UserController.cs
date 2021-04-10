@@ -19,7 +19,7 @@ using blasa.access.management.web.Dto;
 using Microsoft.AspNetCore.Authorization;
  
 using Tools.Constants;
- 
+using Microsoft.Extensions.Logging;
 
 namespace blasa.access.management.web.Controllers
 {
@@ -34,9 +34,9 @@ namespace blasa.access.management.web.Controllers
         private readonly IEmailSender _EmailSender;
         private readonly IToken _Token;
         private readonly IMapper _mapper;
+        private readonly ILogger<UserController> _logger;
 
-
-        public UserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, 
+        public UserController(ILogger<UserController> logger, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, 
             IResponse<User> response, IEmailSender EmailSender  , IToken Token, IMapper mapper)
         {
             this.userManager = userManager;
@@ -46,6 +46,7 @@ namespace blasa.access.management.web.Controllers
             this._EmailSender = EmailSender;
             this._Token = Token;
             _mapper = mapper;
+            _logger = logger;
         }
 
 
@@ -65,7 +66,11 @@ namespace blasa.access.management.web.Controllers
         {
             var user = await userManager.FindByNameAsync(model.Email);
 
-            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new List<Error>() { new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste }});
+            if (user == null)
+            {
+                _logger.LogError(ErrorConstants.BlasacarLoginFailedUserNotExiste);
+                return StatusCode(StatusCodes.Status401Unauthorized, new List<Error>() { new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste } });
+            }
             if ( await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
@@ -80,8 +85,10 @@ namespace blasa.access.management.web.Controllers
                 //});
             }
             //return Unauthorized();
+              
+             _logger.LogError(ErrorConstants.BlasacarLoginFailedWrongPassword);
             return StatusCode(StatusCodes.Status401Unauthorized, new List<Error>() { new Error { message = ErrorConstants.BlasacarLoginFailedWrongPassword } });
-
+  
         }
 
         private async Task<IToken> GetToken(User user)
@@ -134,9 +141,10 @@ namespace blasa.access.management.web.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
-            if (userExists != null &&( userExists.Provider is null))
+            if (userExists != null &&( userExists.Provider is null)) {
+                _logger.LogError(ErrorConstants.BlasacarExistingAccount + "l'adresse mail: "+ model.Email+" existe déja dans la base de données");
                 return StatusCode(StatusCodes.Status400BadRequest, new List<Error>() { new Error { message = ErrorConstants.BlasacarExistingAccount  }});
-            
+            }
             User user = new User()
             {
                 Email = model.Email,
@@ -154,8 +162,9 @@ namespace blasa.access.management.web.Controllers
 
             
             if (!result.Succeeded)
-            { List<IdentityError> listErruer = result.Errors.ToList(); 
-                
+            { List<IdentityError> listErruer = result.Errors.ToList();
+                _logger.LogError(ErrorConstants.BlasacarUserCreationFailedPasswordToShort + ", Mot de passe :" + model.Password);
+
                 return StatusCode(StatusCodes.Status400BadRequest, new List<Error>() { new Error { message = ErrorConstants.BlasacarUserCreationFailedPasswordToShort  }});
             }
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });

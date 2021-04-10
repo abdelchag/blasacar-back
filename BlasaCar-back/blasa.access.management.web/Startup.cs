@@ -23,6 +23,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 namespace blasa.access.management.web
 {
@@ -225,7 +226,7 @@ namespace blasa.access.management.web
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSerilogRequestLogging();
             app.UseCors(x => x
             .AllowAnyOrigin()
             .AllowAnyMethod()

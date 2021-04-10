@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tools.Constants;
+using Microsoft.Extensions.Logging;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace blasa.travel.web.Controllers
@@ -33,12 +34,14 @@ namespace blasa.travel.web.Controllers
         private readonly IGenericCommandAsync<Travel> _TravelGenericServices;
         private readonly ITravelCommandAsync _UserCommandAsyncServices;
         private readonly IMapper _mapper;
-        public TravelController(IGenericCommandAsync<Travel> TravelGenericServices, ITravelCommandAsync UserCommandAsyncServices, IMapper mapper)
+        private readonly ILogger<TravelController> _logger;
+        public TravelController(ILogger<TravelController> logger,IGenericCommandAsync<Travel> TravelGenericServices, ITravelCommandAsync UserCommandAsyncServices, IMapper mapper)
         {
             _TravelGenericServices = TravelGenericServices;
             _UserCommandAsyncServices = UserCommandAsyncServices;
             _mapper = mapper;
-         }
+            _logger = logger;
+        }
 
 
         // POST api/<TravelsController>
@@ -47,6 +50,7 @@ namespace blasa.travel.web.Controllers
         public async Task<IActionResult> Post([FromBody] TravelDTO _travelDto)
 
         {
+          
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -61,7 +65,9 @@ namespace blasa.travel.web.Controllers
             }
             if (userId == null)
             {
+                _logger.LogError("Le user ID dans le claims  est null !");
                 throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+                
             }
 
             var TravelEntity = _mapper.Map<Travel>(_travelDto);
@@ -69,7 +75,7 @@ namespace blasa.travel.web.Controllers
             var newTravelResult = await _TravelGenericServices.AddAsync(TravelEntity);
             if (newTravelResult is null)
             {
-
+                _logger.LogError("Un problème au niveau de la création du Travel est survenu ");
                 throw new BadRequestException(ErrorConstants.BLASACARTravelfailedCreation);
             }
 
@@ -115,7 +121,11 @@ namespace blasa.travel.web.Controllers
                     userId = identity.FindFirst("userId").Value;
 
                 }
-                if (userId == null) throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+                if (userId == null)
+                {
+                    _logger.LogError("Le user ID dans le claims  est null !");
+                    throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+                }
                 listTravelResult = await _UserCommandAsyncServices.GetTravelByUserIdAsync(userId);
             }else
             {
@@ -164,6 +174,7 @@ namespace blasa.travel.web.Controllers
 
             if (newTravelResult is null)
             {
+                _logger.LogError("Le Travel ID : " +  (string.IsNullOrEmpty(TravelEntity.Id.ToString()) ? "Null" : TravelEntity.Id.ToString()) + ", n'existe pas dans la base de données");
                 throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException);  
             }
 

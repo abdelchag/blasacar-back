@@ -9,15 +9,15 @@ using blasa.travel.web.Mapping;
 using blasa.travel.web.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Serilog;
 using Tools.Email;
 
 namespace blasa.travel.web
@@ -47,14 +47,17 @@ namespace blasa.travel.web
     {
         options.InvalidModelStateResponseFactory = context =>
         {
+            var loggerFactory = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>();
+            var logger = loggerFactory.CreateLogger("Logger From Invalid Model");
             var allErrors = context.ModelState.Values.SelectMany(
                 v => v.Errors.Select(b => new Error { message = b.ErrorMessage }))
                              .ToList<Error>();
+            logger.LogError(JsonConvert.SerializeObject(allErrors));
             var result = new BadRequestObjectResult(allErrors);
             result.ContentTypes.Add(MediaTypeNames.Application.Json);
             return result;
         };
-        
+
     });
             #region Services application
 
@@ -234,7 +237,7 @@ namespace blasa.travel.web
             //    context.Response.ContentType = "application/json";
             //    await context.Response.WriteAsync(result);
             //}));
-          
+            app.UseSerilogRequestLogging();
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseHttpsRedirection();

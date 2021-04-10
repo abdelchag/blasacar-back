@@ -7,16 +7,19 @@ using blasa.travel.web.Exceptions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace blasa.travel.web.Middleware
 {
     public class ErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
+        private readonly ILogger<ErrorHandlingMiddleware> _logger;
 
-        public ErrorHandlingMiddleware(RequestDelegate next)
+        public ErrorHandlingMiddleware(ILogger<ErrorHandlingMiddleware> logger, RequestDelegate next)
         {
             _next = next;
+            _logger = logger;
         }
 
         public async Task Invoke(HttpContext context, IWebHostEnvironment env)
@@ -31,7 +34,7 @@ namespace blasa.travel.web.Middleware
             }
         }
 
-        private static Task HandleExceptionAsync(HttpContext context, Exception exception, IWebHostEnvironment env)
+        private  Task HandleExceptionAsync(HttpContext context, Exception exception, IWebHostEnvironment env)
         {
             HttpStatusCode status;
             string message;
@@ -61,6 +64,8 @@ namespace blasa.travel.web.Middleware
                 if (env.IsEnvironment("Development"))
                     stackTrace = exception.StackTrace;
             }
+
+            _logger.LogError(exception.Message + " stackTrace :" + exception.StackTrace) ;
             var listErrors = new List<Error>();
             listErrors.Add(new Error { message = message });
             var result = JsonSerializer.Serialize(listErrors);
