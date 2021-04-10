@@ -23,7 +23,7 @@ namespace blasa.travel.persistance.Repositories
         public async Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id)
         {
 
-            return await _dbContext.Travels.Where(t => t.Userid == id).ToListAsync();
+            return await _dbContext.Travels.Where(t => t.Userid == id).OrderByDescending(t => t.DepartureDate).ToListAsync();
 
         }
 
