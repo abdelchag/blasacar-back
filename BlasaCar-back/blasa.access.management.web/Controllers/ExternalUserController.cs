@@ -155,7 +155,7 @@ namespace blasa.access.management.web.Controllers
 
             if (!result.Succeeded)
                  
-                return StatusCode(StatusCodes.Status400BadRequest, new Error   { message = ErrorConstants.BlasacarUserCreationFailed });
+                return StatusCode(StatusCodes.Status400BadRequest, new List<Error>() { new Error   { message = ErrorConstants.BlasacarUserCreationFailed }});
 
             // Send an email with this link
             //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);

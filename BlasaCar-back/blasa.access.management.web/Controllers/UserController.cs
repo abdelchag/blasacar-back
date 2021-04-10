@@ -65,7 +65,7 @@ namespace blasa.access.management.web.Controllers
         {
             var user = await userManager.FindByNameAsync(model.Email);
 
-            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste });
+            if (user ==null) return StatusCode(StatusCodes.Status401Unauthorized, new List<Error>() { new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste }});
             if ( await userManager.CheckPasswordAsync(user, model.Password))
             {
                var _Token = await GetToken(user);
@@ -80,7 +80,7 @@ namespace blasa.access.management.web.Controllers
                 //});
             }
             //return Unauthorized();
-            return StatusCode(StatusCodes.Status401Unauthorized, new Error { message = ErrorConstants.BlasacarLoginFailedWrongPassword });
+            return StatusCode(StatusCodes.Status401Unauthorized, new List<Error>() { new Error { message = ErrorConstants.BlasacarLoginFailedWrongPassword } });
 
         }
 
@@ -135,7 +135,7 @@ namespace blasa.access.management.web.Controllers
         {
             var userExists = await userManager.FindByNameAsync(model.Email);
             if (userExists != null &&( userExists.Provider is null))
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { message = ErrorConstants.BlasacarExistingAccount  });
+                return StatusCode(StatusCodes.Status400BadRequest, new List<Error>() { new Error { message = ErrorConstants.BlasacarExistingAccount  }});
             
             User user = new User()
             {
@@ -156,7 +156,7 @@ namespace blasa.access.management.web.Controllers
             if (!result.Succeeded)
             { List<IdentityError> listErruer = result.Errors.ToList(); 
                 
-                return StatusCode(StatusCodes.Status400BadRequest, new Error { message = ErrorConstants.BlasacarUserCreationFailedPasswordToShort  });
+                return StatusCode(StatusCodes.Status400BadRequest, new List<Error>() { new Error { message = ErrorConstants.BlasacarUserCreationFailedPasswordToShort  }});
             }
             //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
