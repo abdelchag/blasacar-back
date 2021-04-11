@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -29,9 +30,9 @@ namespace blasa.access.management.web.Controllers
         private readonly IEmailSender _EmailSender;
         private readonly IToken _Token;
         private readonly IMapper _mapper;
+        private readonly ILogger<ExternalUserController> _logger;
 
-
-        public ExternalUserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,
+        public ExternalUserController(ILogger<ExternalUserController> logger, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,
             IResponse<User> response, IEmailSender EmailSender, IToken Token, IMapper mapper)
         {
             this.userManager = userManager;
@@ -41,6 +42,7 @@ namespace blasa.access.management.web.Controllers
             _EmailSender = EmailSender;
             _Token = Token;
             _mapper = mapper;
+            _logger = logger;
         }
 
         //[HttpPost]
@@ -153,10 +155,10 @@ namespace blasa.access.management.web.Controllers
             var result = await userManager.CreateAsync(user);
 
 
-            if (!result.Succeeded)
-                 
-                return StatusCode(StatusCodes.Status400BadRequest, new Error   { message = ErrorConstants.BlasacarUserCreationFailed });
-
+            if (!result.Succeeded) {
+                _logger.LogError(ErrorConstants.BlasacarUserCreationFailed);
+                return StatusCode(StatusCodes.Status400BadRequest, new List<Error>() { new Error   { message = ErrorConstants.BlasacarUserCreationFailed }});
+            }
             // Send an email with this link
             //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
             //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
@@ -219,8 +221,8 @@ namespace blasa.access.management.web.Controllers
                 //return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
             }
             //return  Unauthorized("BlasaCar_login_failed_user_not_exists");
-
-              return StatusCode(StatusCodes.Status401Unauthorized, new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste  });
+            _logger.LogError(ErrorConstants.BlasacarLoginFailedUserNotExiste);
+              return StatusCode(StatusCodes.Status401Unauthorized, new List<Error>() { new Error { message = ErrorConstants.BlasacarLoginFailedUserNotExiste } });
             //User user = new User()
             //{
             //    Email = model.Email,
