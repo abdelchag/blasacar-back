@@ -27,7 +27,7 @@ namespace blasa.access.management.web
                .MinimumLevel.Override("System", LogEventLevel.Warning)
               .WriteTo.Debug(outputTemplate: DateTime.Now.ToString())
               .WriteTo.File("D:\\Logs\\log-blasa.access.management-.txt", rollingInterval: RollingInterval.Day)
-              .WriteTo.File(new RenderedCompactJsonFormatter(), "D:\\Logs\\log-blasa.access.management-.json", rollingInterval: RollingInterval.Day)
+              //.WriteTo.File(new RenderedCompactJsonFormatter(), "D:\\Logs\\log-blasa.access.management-.json", rollingInterval: RollingInterval.Day)
               .CreateLogger();
             try
             {
