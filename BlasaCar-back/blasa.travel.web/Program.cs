@@ -29,7 +29,7 @@ namespace blasa.travel.web
                .MinimumLevel.Override("System", LogEventLevel.Warning)
               .WriteTo.Debug(outputTemplate: DateTime.Now.ToString())
               .WriteTo.File("D:\\Logs\\log-blasa.travel-.txt", rollingInterval: RollingInterval.Day)
-              .WriteTo.File(new RenderedCompactJsonFormatter(), "D:\\Logs\\log-blasa.travel-.json", rollingInterval: RollingInterval.Day)
+              //.WriteTo.File(new RenderedCompactJsonFormatter(), "D:\\Logs\\log-blasa.travel-.json", rollingInterval: RollingInterval.Day)
               .CreateLogger();
             try
             {
