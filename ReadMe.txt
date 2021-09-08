@@ -11,6 +11,9 @@
 	choisir Visual studio 2019 Entreprise
 	clé d'activation : BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
 	clé d'activation : BF8Y8-GN2QH-T84XB-QVY3B-RC4DF-53240-12042010
+	
+	choisir Visual studio 2019 Profesionnel
+	clé d'activation : NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
 
 4 - Si Installation VS Entreprise KO => choisir VS community sans clé d'activation
 
