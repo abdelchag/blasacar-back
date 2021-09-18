@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Security.Claims;
- 
+
 using System;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using blasa.travel.Core.Application.Commands;
@@ -22,7 +22,7 @@ using Microsoft.Extensions.Logging;
 namespace blasa.travel.web.Controllers
 {
 
-     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/travel")]
 
     [ApiController]
@@ -35,7 +35,7 @@ namespace blasa.travel.web.Controllers
         private readonly ITravelCommandAsync _UserCommandAsyncServices;
         private readonly IMapper _mapper;
         private readonly ILogger<TravelController> _logger;
-        public TravelController(ILogger<TravelController> logger,IGenericCommandAsync<Travel> TravelGenericServices, ITravelCommandAsync UserCommandAsyncServices, IMapper mapper)
+        public TravelController(ILogger<TravelController> logger, IGenericCommandAsync<Travel> TravelGenericServices, ITravelCommandAsync UserCommandAsyncServices, IMapper mapper)
         {
             _TravelGenericServices = TravelGenericServices;
             _UserCommandAsyncServices = UserCommandAsyncServices;
@@ -50,7 +50,7 @@ namespace blasa.travel.web.Controllers
         public async Task<IActionResult> Post([FromBody] TravelDTO _travelDto)
 
         {
-          
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -67,7 +67,7 @@ namespace blasa.travel.web.Controllers
             {
                 _logger.LogError("Le user ID dans le claims  est null !");
                 throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
-                
+
             }
 
             var TravelEntity = _mapper.Map<Travel>(_travelDto);
@@ -103,10 +103,10 @@ namespace blasa.travel.web.Controllers
             return Ok(_mapper.Map<TravelDTO>(TravelResult));
         }
 
- 
-        [HttpGet ]
+
+        [HttpGet]
         public async Task<IActionResult> GetAllAsync([FromQuery] bool onlyUser)
- 
+
 
         {
             var listTravelResult = await Task.FromResult<IReadOnlyList<Travel>>(Array.Empty<Travel>());
@@ -127,7 +127,8 @@ namespace blasa.travel.web.Controllers
                     throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
                 }
                 listTravelResult = await _UserCommandAsyncServices.GetTravelByUserIdAsync(userId);
-            }else
+            }
+            else
             {
                 // All
                 listTravelResult = await _TravelGenericServices.GetAllAsync();
@@ -139,6 +140,48 @@ namespace blasa.travel.web.Controllers
             }
             return Ok(_mapper.Map<IReadOnlyList<TravelDTO>>(listTravelResult));
         }
+
+        [HttpGet]
+        [Route("search")]
+        public async Task<IActionResult> SearchTravel(string arrivalCity, string departureCity, string departureDate, string departureTime,
+            string isAutomaticAcceptance, string numberPlaces, string price)
+        {
+
+            var travelEntity = new Travel();
+            travelEntity.ArrivalCity = string.IsNullOrEmpty(arrivalCity) ? arrivalCity : null;
+            travelEntity.DepartureCity = string.IsNullOrEmpty(departureCity) ? departureCity : null;
+
+            if (string.IsNullOrEmpty(departureDate)) travelEntity.DepartureDate = Convert.ToDateTime(departureDate);
+
+            if (string.IsNullOrEmpty(departureTime)) travelEntity.DepartureTime = Convert.ToDateTime(departureTime);
+
+            if (string.IsNullOrEmpty(isAutomaticAcceptance)) travelEntity.IsAutomaticAcceptance = Convert.ToBoolean(isAutomaticAcceptance);
+
+            if (string.IsNullOrEmpty(numberPlaces)) travelEntity.NumberPlaces = Convert.ToInt16(numberPlaces);
+
+            if (string.IsNullOrEmpty(price)) travelEntity.Price = Convert.ToInt16(price);
+
+            // User
+            string userId = null;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+                userId = identity.FindFirst("userId").Value;
+            }
+            if (userId == null)
+            {
+                _logger.LogError("Le user ID dans le claims  est null !");
+                throw new NotAuthorizException(ErrorConstants.BLASACARUnauthorized);
+            }
+            var listTravelResult = await _UserCommandAsyncServices.GetTravelByFiltre(travelEntity);
+
+            if (listTravelResult is null)
+            {
+                listTravelResult = await Task.FromResult<IReadOnlyList<Travel>>(Array.Empty<Travel>());
+            }
+            return Ok(_mapper.Map<IReadOnlyList<TravelDTO>>(listTravelResult));
+        }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
@@ -185,8 +228,8 @@ namespace blasa.travel.web.Controllers
 
             if (newTravelResult is null)
             {
-                _logger.LogError("Le Travel ID : " +  (string.IsNullOrEmpty(TravelEntity.Id.ToString()) ? "Null" : TravelEntity.Id.ToString()) + ", n'existe pas dans la base de données");
-                throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException);  
+                _logger.LogError("Le Travel ID : " + (string.IsNullOrEmpty(TravelEntity.Id.ToString()) ? "Null" : TravelEntity.Id.ToString()) + ", n'existe pas dans la base de données");
+                throw new NotFoundException(ErrorConstants.BLASACARTravelNotFoundException);
             }
 
             return Ok(_mapper.Map<TravelDTO>(newTravelResult));

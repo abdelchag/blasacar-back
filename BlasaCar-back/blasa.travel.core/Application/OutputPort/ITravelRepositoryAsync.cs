@@ -9,6 +9,7 @@ namespace blasa.travel.Core.Application.OutputPort
    public interface ITravelRepositoryAsync
     {
         Task<IReadOnlyList<Travel>> GetTravelByUserIdAsync(string id);
-       
+        Task<IReadOnlyList<Travel>> GetTravelByFiltre(Travel entity);
+
     }
 }

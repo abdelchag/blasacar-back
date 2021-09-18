@@ -23,7 +23,13 @@ namespace blasa.travel.Core.Application.Commands
 
         }
 
-       
+        public async Task<IReadOnlyList<Travel>> GetTravelByFiltre(Travel entity)
+        {
+            return await _TravelRepositoryAsync.GetTravelByFiltre(entity);
+
+        }
+
+
 
     }
 }
