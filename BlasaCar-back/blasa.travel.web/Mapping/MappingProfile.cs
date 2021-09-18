@@ -12,6 +12,8 @@ namespace blasa.travel.web.Mapping
             // Add as many of these lines as you need to map your objects
              CreateMap<Travel, TravelDTO>();
              CreateMap<TravelDTO, Travel>();
+             CreateMap<FiltreTravelDTO, Travel>();
+             CreateMap<Travel, FiltreTravelDTO > ();
              //CreateMap<IReadOnlyList<TravelDTO>, IReadOnlyList<Travel>>();
              //CreateMap<IReadOnlyList<Travel>, IReadOnlyList<TravelDTO>>();
              

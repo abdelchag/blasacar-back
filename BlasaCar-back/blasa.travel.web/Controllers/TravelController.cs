@@ -143,25 +143,10 @@ namespace blasa.travel.web.Controllers
 
         [HttpGet]
         [Route("search")]
-        public async Task<IActionResult> SearchTravel(string arrivalCity, string departureCity, string departureDate, string departureTime,
-            string isAutomaticAcceptance, string numberPlaces, string price)
+        public async Task<IActionResult> SearchTravel([FromQuery]   FiltreTravelDTO _FiltreTravelDTO)
         {
-
-            var travelEntity = new Travel();
-            travelEntity.ArrivalCity = string.IsNullOrEmpty(arrivalCity) ? arrivalCity : null;
-            travelEntity.DepartureCity = string.IsNullOrEmpty(departureCity) ? departureCity : null;
-
-            if (string.IsNullOrEmpty(departureDate)) travelEntity.DepartureDate = Convert.ToDateTime(departureDate);
-
-            if (string.IsNullOrEmpty(departureTime)) travelEntity.DepartureTime = Convert.ToDateTime(departureTime);
-
-            if (string.IsNullOrEmpty(isAutomaticAcceptance)) travelEntity.IsAutomaticAcceptance = Convert.ToBoolean(isAutomaticAcceptance);
-
-            if (string.IsNullOrEmpty(numberPlaces)) travelEntity.NumberPlaces = Convert.ToInt16(numberPlaces);
-
-            if (string.IsNullOrEmpty(price)) travelEntity.Price = Convert.ToInt16(price);
-
-            // User
+            var travelEntity = _mapper.Map<Travel>(_FiltreTravelDTO);
+            
             string userId = null;
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)

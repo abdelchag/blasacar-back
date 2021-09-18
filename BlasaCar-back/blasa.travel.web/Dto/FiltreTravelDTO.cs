@@ -16,7 +16,7 @@ namespace blasa.travel.web.Models
         public int? NumberPlaces { get; set; }
         public bool? IsAutomaticAcceptance { get; set; }
         public decimal? Price { get; set; }
-        public string PhoneNumber { get; set; }
+
 
     }
 }
