@@ -40,8 +40,7 @@ namespace blasa.travel.persistance.Repositories
 
 
 
-
-            return await list.OrderByDescending(t => t.DepartureTime).ThenBy(t=> t.DepartureDate).ToListAsync();
+            return await list.OrderByDescending(t => t.DepartureDate).ThenBy(t => t.DepartureTime).ToListAsync();
         }
 
 
