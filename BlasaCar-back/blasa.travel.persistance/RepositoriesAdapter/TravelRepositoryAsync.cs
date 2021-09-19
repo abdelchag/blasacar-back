@@ -32,11 +32,11 @@ namespace blasa.travel.persistance.Repositories
             var list = _dbContext.Travels.Where(t =>
           t.DepartureCity == filreTravel.DepartureCity &&
           t.ArrivalCity == filreTravel.ArrivalCity &&          
-          t.DepartureDate == filreTravel.DepartureDate || filreTravel.DepartureDate == null&&
-         t.DepartureTime == filreTravel.DepartureTime || filreTravel.DepartureTime == null&&
-         t.IsAutomaticAcceptance == filreTravel.IsAutomaticAcceptance || filreTravel.IsAutomaticAcceptance == null &&
-          t.NumberPlaces == filreTravel.NumberPlaces || filreTravel.NumberPlaces == null &&        
-          t.Price == filreTravel.Price || filreTravel.Price == null);
+         ( t.DepartureDate == filreTravel.DepartureDate || filreTravel.DepartureDate == null)&&
+         (t.DepartureTime == filreTravel.DepartureTime || filreTravel.DepartureTime == null)&&
+         (t.IsAutomaticAcceptance == filreTravel.IsAutomaticAcceptance || filreTravel.IsAutomaticAcceptance == null) &&
+         ( t.NumberPlaces == filreTravel.NumberPlaces || filreTravel.NumberPlaces == null )&&        
+         ( t.Price == filreTravel.Price || filreTravel.Price == null));
 
 
 
