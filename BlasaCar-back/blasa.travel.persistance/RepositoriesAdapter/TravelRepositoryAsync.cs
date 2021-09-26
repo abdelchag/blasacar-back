@@ -36,7 +36,7 @@ namespace blasa.travel.persistance.Repositories
          (t.DepartureTime == filreTravel.DepartureTime || filreTravel.DepartureTime == null)&&
          (t.IsAutomaticAcceptance == filreTravel.IsAutomaticAcceptance || filreTravel.IsAutomaticAcceptance == null) &&
          ( t.NumberPlaces == filreTravel.NumberPlaces || filreTravel.NumberPlaces == null )&&        
-         ( t.Price == filreTravel.Price || filreTravel.Price == null));
+         ( t.Price <= filreTravel.Price || filreTravel.Price == null));
 
 
 

@@ -14,6 +14,7 @@ namespace blasa.travel.web.Mapping
              CreateMap<TravelDTO, Travel>();
              CreateMap<FiltreTravelDTO, Travel>();
              CreateMap<Travel, FiltreTravelDTO > ();
+             CreateMap<Book, BookDTO> ();
              //CreateMap<IReadOnlyList<TravelDTO>, IReadOnlyList<Travel>>();
              //CreateMap<IReadOnlyList<Travel>, IReadOnlyList<TravelDTO>>();
              

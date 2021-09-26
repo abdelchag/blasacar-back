@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace blasa.travel.Core.Domain.Entities
+namespace blasa.travel.Core.Domain.Entities  
 {
    public class Travel : AuditableBaseEntity
     {
@@ -21,6 +21,7 @@ namespace blasa.travel.Core.Domain.Entities
         public decimal? Price { get; set; }
         public string PhoneNumber { get; set; }
         public string Userid         { get; set; }
+        public ICollection<Book> Books { get; set; }
 
     }
 }

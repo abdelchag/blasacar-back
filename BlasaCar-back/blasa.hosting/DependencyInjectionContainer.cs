@@ -33,8 +33,10 @@ namespace blasa.tarvel.DependencyInjectionContainer
 
             services.AddScoped<IGenericCommandAsync<Travel>, GenericCommandAsync<Travel>>();
             services.AddScoped<IGenericRepositoryAsync<Travel>, GenericRepositoryAsync<Travel>>();
-              services.AddScoped<ITravelRepositoryAsync, TravelRepositoryAsync>();
+            services.AddScoped<ITravelRepositoryAsync, TravelRepositoryAsync>();
             services.AddScoped<ITravelCommandAsync, TravelCommandAsync>();
+            services.AddScoped<IBookRepositoryAsync, BookRepositoryAsync>();
+            services.AddScoped<IBookCommandAsync, BookCommandAsync>();
         }
     }
 }
